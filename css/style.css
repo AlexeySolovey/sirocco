@@ -43052,7 +43052,6 @@ body
 .sale-block{
     min-height: 365px;
     min-width: 320px;
-   
 }
 
 @media (min-width:320px) and (max-width:420px) {
@@ -43071,24 +43070,28 @@ body
     line-height: 34px;
     margin-bottom: 30px;
     font-weight: bold;
-  }
+}
 
-  .separator::before,
-  .separator::after {
+.separator-style {
+    margin-top: 120px;
+}
+
+.separator::before,
+.separator::after {
     content: '';
     flex: 1;
     border-bottom: 2px solid gray;
-  }
+}
 
-  .separator:not(:empty)::before {
+.separator:not(:empty)::before {
     margin-right: 1.25em;
-  }
+}
 
-  .separator:not(:empty)::after {
+.separator:not(:empty)::after {
     margin-left: 1.25em;
-  }
+}
 
-  .sale-block
+.sale-block
 {
     min-height: 365px;
     min-width: 320px;
@@ -43540,7 +43543,6 @@ right: 2%;
 .editorial-block {
     padding-bottom: 40%;
     position: relative;
-    
 }
 
 .editorial-block img{
@@ -43591,14 +43593,24 @@ right: 2%;
 .editorial_text{
     top: 28%;
     right: 0;
-    max-width: 140px;
+    max-width: 180px;
     position: absolute;
+}
+.editorial_text p{
+    margin-top: 10px;
+    margin-right: 5px;
+}
+@media (max-width:400px) {
+    .editorial_text p:last-child{
+        display: none;
+    }
+
 }
 
 .editorial_title{
     text-transform: uppercase;
     font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 25px;
 }
 
  @media (min-width:300px) and (max-width: 1024px){
