@@ -43746,6 +43746,7 @@ right: 2%;
         left: 24%;
         top: 76%;
         max-width: 350px;
+        font-size: 20px;
     }
     .editorial-img2{
         width: 54%;
@@ -43769,6 +43770,20 @@ right: 2%;
     width: 20%;
     }
  }
+
+@media (min-width:1860px){
+    .editorial_text{
+        max-width: 680px;
+    }
+    .editorial_title {
+        font-size: 35px;
+    }
+    .editorial_text p{
+        margin-top: 30px;
+        font-size: 25px;
+        line-height: 1.2;
+    }
+}
 
  .list_a{
      text-align: center;
@@ -43913,4 +43928,31 @@ right: 2%;
 
 .test {
     width: 100%;
+}
+
+.row-free {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row-free-img {
+    width: 24%;
+}
+.sale-block {
+    min-width: 0!important;
+    min-height: 0!important;
+}
+@media (max-width: 1200px){
+    .row-free {
+    flex-wrap: wrap;
+    }
+    .row-free-img {
+        width: 48%;
+    }
+}
+@media (max-width: 768px){
+    .row-free-img {
+        width: 100%;
+        padding: 0 10px;
+    }
 }
