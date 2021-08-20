@@ -19205,9 +19205,9 @@ height: 43px;
     {
         display: block;
     }
-    .prd-carousel .prd .prd-inside {
+    /* .prd-carousel .prd .prd-inside {
 	    height: 505px;
-	}
+	} */
 	.prd-carousel .prd-info-wrap .prd-title {
 	    min-height: 10px;
 	}
@@ -42530,7 +42530,7 @@ body
 
     display: none; 
 
-    margin: 50px auto 0;
+    margin: 20px auto 0;
 }
 .slick-slider[class*='-carousel'] .slick-dots[style]
 {
@@ -43878,6 +43878,11 @@ right: 2%;
 
 .icons_like>img{
     cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+}
+.icons_like:hover>img{
+    box-shadow: 0 4px 28px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.22)
 }
 
 .product-main-carousel .slick-slide
@@ -43896,4 +43901,8 @@ right: 2%;
     .type-email {
         margin: 0!important;
     }
+}
+
+.test {
+    width: 100%;
 }
