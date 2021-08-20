@@ -43082,7 +43082,7 @@ body
 @media (min-width:320px) and (max-width:420px) {
     .sale-block{
         min-width: 310px;
-        min-height: 310px;
+        min-height: auto;
     }
 }
 
@@ -43184,8 +43184,8 @@ body
 
 @media (min-width:320px) and (max-width:426px) {
     .sale-block {
-        
-   min-width: 100%;
+        min-height: auto;
+        min-width: 100%;
     }
     
 }
@@ -43886,4 +43886,14 @@ right: 2%;
     height: 100%;
     padding: 0 10px;
     overflow: hidden;
+}
+@media (max-width: 400px){
+    .bi-the-first {
+        min-width: 260px!important;
+    }
+}
+@media (max-width: 991px){
+    .type-email {
+        margin: 0!important;
+    }
 }
