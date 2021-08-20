@@ -42350,10 +42350,14 @@ body
     justify-content: space-between;
 }
 .text-center_block-img {
-    margin-right: 20px;
+    margin-right: 40px;
+    width: 50%;
 }
 .text-center_block-img:last-child {
     margin-right: 0px;
+}
+.text-center_block-img img {
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -42363,6 +42367,10 @@ body
     }
     .text-center_block-img {
         margin-right: 0px;
+    }
+    .text-center_block-img {
+        margin-right: 40px;
+        width: 100%;
     }
 }
 
