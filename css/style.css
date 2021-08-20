@@ -43254,18 +43254,26 @@ body
 #slider-2 .prd:last-child{
     margin-right: 0px;
 }
-.block_category:hover .title_category a{
+.block_category:hover .title_category{
     background: black;
     color:white;
     border-radius: 5px;
+    padding: 10px 0px;
+    cursor: pointer;
     height: 32px;
-    padding: 10px 40px;
+}
+.block_category:hover .title_category a{
+    color:white;
 }
 
 .title_category {
     text-align: center;
     margin-top: 20px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 196px; */
+    align-self: center;
 }
 
 .title_category a{
@@ -43292,6 +43300,15 @@ right: 2%;
     left: 2%;
 }
 
+@media (max-width: 800px){
+    .block_category {
+        display: flex;
+        flex-direction: column;
+    }
+    .title_category {
+        min-width: 196px;
+    }
+}
 
 @media (min-width:300px) and (max-width: 410px){
     .girl_shop{
