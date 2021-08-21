@@ -43218,6 +43218,11 @@ body
     font-size: 18px;
     color: lightgrey;
   }
+@media (max-width:767px) {
+    .col-newsletter{
+        text-align: center;
+    }
+}
   .col-newsletter_span{
     font-size: 34px;
     color: black;
