@@ -116,7 +116,7 @@ function onYouTubeIframeAPIReady() {
 			}
 			$video.closest(selectors.videoWrapper).find('.bnslider-text').each(function () {
 				var $this = $(this),
-				    thisInlineStyle = '';
+					thisInlineStyle = '';
 				var thisStyle = $this.data();
 				for (var data in thisStyle) {
 					if (data == 'fontcolor') {
@@ -608,7 +608,7 @@ function onYouTubeIframeAPIReady() {
 		setLanguage: function setLanguage() {
 			$('.js-currencies').find('a').on('click', function (e) {
 				var $this = $(this),
-				    selected = $this.attr('data-value');
+					selected = $this.attr('data-value');
 				$this.closest('li').siblings().removeClass('active').end().closest('li').addClass('active');
 				$this.closest('.dropdn').find('.js-dropdn-select-current').html(selected);
 				$this.closest('form').find("input[name='currency']").val(selected);
@@ -619,7 +619,7 @@ function onYouTubeIframeAPIReady() {
 		scrollNextSection: function scrollNextSection() {
 			function goToByScroll($section) {
 				var top = $section.offset().top,
-				    h = $('.hdr-content-sticky').length ? $('.hdr-content-sticky').height() : 0;
+					h = $('.hdr-content-sticky').length ? $('.hdr-content-sticky').height() : 0;
 				if ($('.bnr-wrap', $section).length) {
 					top = $('.bnr-wrap', $section).offset().top;
 				}
@@ -699,7 +699,7 @@ function onYouTubeIframeAPIReady() {
 					});
 					$(document).on('click', '.js-remove-wishlist', function (e) {
 						var $product = $(this).closest('.prd, .prd-block_info'),
-						    $grid = $('.prd-grid--wishlist');
+							$grid = $('.prd-grid--wishlist');
 						if ($grid.length) {
 							$grid.addClass('disable-actions');
 							anime({
@@ -738,8 +738,8 @@ function onYouTubeIframeAPIReady() {
 		parallaxImage: function parallaxImage() {
 			function parallaxed(image, e) {
 				var amountMovedX = e.clientX * -0.3 / 8,
-				    amountMovedY = e.clientY * -0.3 / 8,
-				    x = $(image);
+					amountMovedY = e.clientY * -0.3 / 8,
+					x = $(image);
 				for (var i = 0; i < x.length; i++) {
 					x[i].style.transform = 'translate(' + amountMovedX + 'px,' + amountMovedY + 'px)';
 				}
@@ -816,7 +816,7 @@ function onYouTubeIframeAPIReady() {
 		},
 		videoContent: function videoContent(video) {
 			var $videoStopBtn = $('.js-video-stop'),
-			    $videoPlayBtn = $('.js-video-play');
+				$videoPlayBtn = $('.js-video-play');
 			$videoPlayBtn.on('click', function () {
 				var $video = $(this).closest('.js-video-wrap').find(video);
 				$video.get(0).play();
@@ -894,18 +894,18 @@ function onYouTubeIframeAPIReady() {
 					},
 					_animate: function _animate() {
 						var that = this,
-						    $slider = $(that.options.slider),
-						    media = $slider.find(that.options.media),
-						    videoStopBtn = that.options.videoStopBtn,
-						    videoPlayBtn = that.options.videoPlayBtn,
-						    $wrapper = $slider.closest(that.options.wrapper),
-						    arrowsplace = $wrapper.find(that.options.arrowsplace),
-						    dotsplace = $wrapper.find(that.options.dotsplace),
-						    animatedText = "[class^='bnslider-text'],[class*=' bnslider-text'],.btn-wrap",
-						    $textBlock = $(animatedText, $slider);
+							$slider = $(that.options.slider),
+							media = $slider.find(that.options.media),
+							videoStopBtn = that.options.videoStopBtn,
+							videoPlayBtn = that.options.videoPlayBtn,
+							$wrapper = $slider.closest(that.options.wrapper),
+							arrowsplace = $wrapper.find(that.options.arrowsplace),
+							dotsplace = $wrapper.find(that.options.dotsplace),
+							animatedText = "[class^='bnslider-text'],[class*=' bnslider-text'],.btn-wrap",
+							$textBlock = $(animatedText, $slider);
 						$textBlock.each(function () {
 							var $this = $(this),
-							    thisInlineStyle = '';
+								thisInlineStyle = '';
 							var thisStyle = $this.data();
 							for (var data in thisStyle) {
 								if (data == 'fontcolor') {
@@ -941,7 +941,7 @@ function onYouTubeIframeAPIReady() {
 							if ($textWrapper.find('span').length) {
 								$textWrapper.find('span').each(function () {
 									var $this = $(this),
-									    style = $this.attr('style');
+										style = $this.attr('style');
 									$this.html($this.html().replace(/([^\x00-\x80]|\w)/g, "<span class='letter' style='" + style + "'>$&</span>"));
 									$this.contents().unwrap();
 								});
@@ -1169,7 +1169,7 @@ function onYouTubeIframeAPIReady() {
 						$slider.on('init', function (slick) {
 							slick = $(slick.currentTarget);
 							var $currentSlide = slick.find('.slick-current'),
-							    $firstAnimatingElements = $('[data-animation]', $currentSlide);
+								$firstAnimatingElements = $('[data-animation]', $currentSlide);
 							if (isMobile) {
 								if (!$('.bnslider-image-mobile', $currentSlide).find('img').length) {
 									startInit($firstAnimatingElements);
@@ -1213,14 +1213,14 @@ function onYouTubeIframeAPIReady() {
 						$slider.on('afterChange', function (e, slick) {
 							slick = $(slick.$slider);
 							var $currentSlide = slick.find('.slick-current'),
-							    status = $currentSlide.data('autoplay') == true && !$currentSlide.hasClass('is-custom-paused') || $currentSlide.hasClass('is-custom-playing') ? "play" : "pause",
-							    $animatingElements = $currentSlide.find('[data-animation]');
+								status = $currentSlide.data('autoplay') == true && !$currentSlide.hasClass('is-custom-paused') || $currentSlide.hasClass('is-custom-playing') ? "play" : "pause",
+								$animatingElements = $currentSlide.find('[data-animation]');
 							controlVideo(slick, status);
 						});
 						$slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 							slick = $(slick.$slider);
 							var $nextSlide = $slider.find('.bnslider-slide[data-slick-index="' + nextSlide + '"]'),
-							    $animatingElements = $nextSlide.find('[data-animation]');
+								$animatingElements = $nextSlide.find('[data-animation]');
 							$slider.slick('slickPlay');
 							controlVideo(slick, "pause");
 							doAnimations($animatingElements);
@@ -1246,10 +1246,10 @@ function onYouTubeIframeAPIReady() {
 
 						function controlVideo(slick, control, button) {
 							var video = void 0,
-							    currentSlide = slick.find(".slick-current"),
-							    slideType = currentSlide.data("video-type"),
-							    player = currentSlide.find("iframe").get(0),
-							    userConrol = button;
+								currentSlide = slick.find(".slick-current"),
+								slideType = currentSlide.data("video-type"),
+								player = currentSlide.find("iframe").get(0),
+								userConrol = button;
 							if (userConrol) currentSlide.addClass('userControl');
 							if (slideType === "youtube") {
 								switch (control) {
@@ -1314,10 +1314,10 @@ function onYouTubeIframeAPIReady() {
 								return;
 							}
 							var $player = $slide.find('iframe'),
-							    videoOptionsRatio = 16 / 9,
-							    slideWidth = $slide.width(),
-							    playerWidth = $player.width(),
-							    playerHeight = $slide.height();
+								videoOptionsRatio = 16 / 9,
+								slideWidth = $slide.width(),
+								playerWidth = $player.width(),
+								playerHeight = $slide.height();
 							if (slideWidth / videoOptionsRatio < playerHeight) {
 								playerWidth = Math.ceil(playerHeight * videoOptionsRatio);
 								if ($('body').hasClass('rtl')) {
@@ -1402,7 +1402,7 @@ function onYouTubeIframeAPIReady() {
 		resizeSvgRect: function resizeSvgRect() {
 			$('svg > rect').each(function () {
 				var $rect = $(this),
-				    $container = $rect.closest('.form-control-wrap');
+					$container = $rect.closest('.form-control-wrap');
 				$rect.attr('width', $container.width());
 			});
 		},
@@ -1459,26 +1459,26 @@ function onYouTubeIframeAPIReady() {
 			if (!$body.hasClass('touch')) {
 				$document.on('mouseenter', '[data-hover-bgcolor]', function (e) {
 					var $this = $(e.target),
-					    color = $this.attr('data-hover-bgcolor') ? $this.attr('data-hover-bgcolor') : '';
+						color = $this.attr('data-hover-bgcolor') ? $this.attr('data-hover-bgcolor') : '';
 					$this.css({
 						'background-color': color
 					});
 				}).on('mouseleave', '[data-hover-bgcolor]', function (e) {
 					var $this = $(e.target),
-					    color = $this.attr('data-bgcolor') ? $this.attr('data-bgcolor') : '';
+						color = $this.attr('data-bgcolor') ? $this.attr('data-bgcolor') : '';
 					$this.css({
 						'background-color': color
 					});
 				});
 				$document.on('mouseenter', '[data-hover-color]', function (e) {
 					var $this = $(e.target),
-					    color = $this.attr('data-hover-color') ? $this.attr('data-hover-color') : '';
+						color = $this.attr('data-hover-color') ? $this.attr('data-hover-color') : '';
 					$this.css({
 						'color': color
 					});
 				}).on('mouseleave', '[data-color]', function (e) {
 					var $this = $(e.target),
-					    color = $this.attr('data-color') ? $this.attr('data-color') : '';
+						color = $this.attr('data-color') ? $this.attr('data-color') : '';
 					$this.css({
 						'color': color
 					});
@@ -1523,7 +1523,7 @@ function onYouTubeIframeAPIReady() {
 				setTimeout(function () {
 					var speed = $body.height() / 3 > 500 ? $body.height() / 3 : 500;
 					var wHeight = $window.height() < $elem.height() * 2 ? 0 : $window.height() - $elem.height() * 2,
-					    offsetTop = $elem.offset().top - wHeight;
+						offsetTop = $elem.offset().top - wHeight;
 					$('html,body').animate({
 						scrollTop: offsetTop
 					}, speed);
@@ -1541,17 +1541,17 @@ function onYouTubeIframeAPIReady() {
 					init: function init(options) {
 						$.extend(this.default, options);
 						var that = this,
-						    $gallery = $(this.default.gallery);
+							$gallery = $(this.default.gallery);
 						$gallery.each(function () {
 							var $gallery = $(this),
-							    $galleryItem = $(that.default.galleryItem, $gallery),
-							    $filterLabel = $(that.default.filterLabel, $gallery),
-							    activeStart = void 0;
+								$galleryItem = $(that.default.galleryItem, $gallery),
+								$filterLabel = $(that.default.filterLabel, $gallery),
+								activeStart = void 0;
 							that._handlers($filterLabel, $galleryItem, $gallery);
 							$filterLabel.each(function () {
 								var $this = $(this),
-								    selectedCategory = $this.attr('data-filter'),
-								    count = '<span>' + $gallery.find(selectedCategory).length + '</span>';
+									selectedCategory = $this.attr('data-filter'),
+									count = '<span>' + $gallery.find(selectedCategory).length + '</span>';
 								$this.append(count);
 								if ($this.hasClass('active')) {
 									$galleryItem.filter(selectedCategory).fadeIn(0).addClass('isvisible');
@@ -1574,7 +1574,7 @@ function onYouTubeIframeAPIReady() {
 						var that = this;
 						$filterLabel.on('click', function (e) {
 							var $this = $(this),
-							    selectedCategory = $this.attr('data-filter');
+								selectedCategory = $this.attr('data-filter');
 							if ($this.hasClass('active')) {
 								return false;
 							} else {
@@ -1648,7 +1648,7 @@ function onYouTubeIframeAPIReady() {
 		removeEmptyLinked: function removeEmptyLinked(target, empty) {
 			$(target).each(function () {
 				var $this = $(this),
-				    $empty = $this.find(empty);
+					$empty = $this.find(empty);
 				if (!$.trim($empty.html()).length) $this.remove();
 			});
 		},
@@ -1665,7 +1665,7 @@ function onYouTubeIframeAPIReady() {
 						var that = this;
 						$(that.default.holder).each(function () {
 							var $this = $(this),
-							    wh = $window.height();
+								wh = $window.height();
 							if ($(that.default.header).length && $(that.default.footer).length) {
 								$this.css({
 									'min-height': wh - $(that.default.header).outerHeight() - $(that.default.footer).outerHeight() - parseInt($(that.default.footer).css('marginTop')) + 'px'
@@ -1702,9 +1702,9 @@ function onYouTubeIframeAPIReady() {
 						var that = this;
 						$(that.default.slider).each(function () {
 							var $this = $(this),
-							    wh = $window.height(),
-							    $header = $(that.default.header),
-							    $footer = $(that.default.footer);
+								wh = $window.height(),
+								$header = $(that.default.header),
+								$footer = $(that.default.footer);
 							if ($header.length) {
 								wh = wh - $header.outerHeight();
 							}
@@ -1743,7 +1743,7 @@ function onYouTubeIframeAPIReady() {
 
 			if ($(button).length) {
 				var $button = $(button),
-				    windowH = $window.height();
+					windowH = $window.height();
 				if ($window.scrollTop() > windowH / 2) {
 					$button.addClass('is-visible');
 				}
@@ -1763,51 +1763,53 @@ function onYouTubeIframeAPIReady() {
 		promoPopup: function promoPopup(modal) {
 
 			!function (t) {
-				var e = {};!function () {
+				var e = {}; !function () {
 					var o,
-					    n = t.requestAnimationFrame || t.webkitRequestAnimationFrame || t.mozRequestAnimationFrame || t.oRequestAnimationFrame || t.msRequestAnimationFrame || function (e) {
-						t.setTimeout(e, 1e3 / 60);
-					},
-					    i = { particleCount: 50, angle: 90, spread: 45, startVelocity: 45, decay: .9, ticks: 200, x: .5, y: .5, zIndex: 100, colors: ["#26ccff", "#a25afd", "#ff5e7e", "#88ff5a", "#fcff42", "#ffa62d", "#ff36ff"] };function r() {}function l(t, e, o) {
-						return n = t && null != t[e] ? t[e] : i[e], (r = o) ? r(n) : n;var n, r;
-					}function a(t) {
-						return parseInt(t, 16);
-					}function c(t) {
-						t.width = document.documentElement.clientWidth, t.height = document.documentElement.clientHeight;
-					}function s(t) {
-						var e,
-						    o,
-						    n = t.angle * (Math.PI / 180),
-						    i = t.spread * (Math.PI / 180);return { x: t.x, y: t.y, wobble: 10 * Math.random(), velocity: .5 * t.startVelocity + Math.random() * t.startVelocity, angle2D: -n + (.5 * i - Math.random() * i), tiltAngle: Math.random() * Math.PI, color: (e = t.color, o = String(e).replace(/[^0-9a-f]/gi, ""), o.length < 6 && (o = o[0] + o[0] + o[1] + o[1] + o[2] + o[2]), { r: a(o.substring(0, 2)), g: a(o.substring(2, 4)), b: a(o.substring(4, 6)) }), tick: 0, totalTicks: t.ticks, decay: t.decay, random: Math.random() + 5, tiltSin: 0, tiltCos: 0, wobbleX: 0, wobbleY: 0 };
-					}function u(o, i, l) {
-						var a = i.slice(),
-						    s = o.getContext("2d"),
-						    u = o.width,
-						    d = o.height;function m() {
-							u = d = null;
-						}var f,
-						    h = (f = function f(e) {
-							n(function i() {
-								u || d || (c(o), u = o.width, d = o.height), s.clearRect(0, 0, u, d), (a = a.filter(function (t) {
-									return function (t, e) {
-										e.x += Math.cos(e.angle2D) * e.velocity, e.y += Math.sin(e.angle2D) * e.velocity + 3, e.wobble += .1, e.velocity *= e.decay, e.tiltAngle += .1, e.tiltSin = Math.sin(e.tiltAngle), e.tiltCos = Math.cos(e.tiltAngle), e.random = Math.random() + 5, e.wobbleX = e.x + 10 * Math.cos(e.wobble), e.wobbleY = e.y + 10 * Math.sin(e.wobble);var o = e.tick++ / e.totalTicks,
-										    n = e.x + e.random * e.tiltCos,
-										    i = e.y + e.random * e.tiltSin,
-										    r = e.wobbleX + e.random * e.tiltCos,
-										    l = e.wobbleY + e.random * e.tiltSin;return t.fillStyle = "rgba(" + e.color.r + ", " + e.color.g + ", " + e.color.b + ", " + (1 - o) + ")", t.beginPath(), t.moveTo(Math.floor(e.x), Math.floor(e.y)), t.lineTo(Math.floor(e.wobbleX), Math.floor(i)), t.lineTo(Math.floor(r), Math.floor(l)), t.lineTo(Math.floor(n), Math.floor(e.wobbleY)), t.closePath(), t.fill(), e.tick < e.totalTicks;
-									}(s, t);
-								})).length ? n(i) : (t.removeEventListener("resize", m), l(), e());
-							});
-						}, e.exports.Promise ? new e.exports.Promise(f) : (f(r), null));return t.addEventListener("resize", m, !1), { addFettis: function addFettis(t) {
-								return a = a.concat(t), h;
-							}, canvas: o, promise: h };
-					}e.exports = function (t) {
-						for (var e, n, i, r = l(t, "particleCount", Math.floor), a = l(t, "angle", Number), d = l(t, "spread", Number), m = l(t, "startVelocity", Number), f = l(t, "decay", Number), h = l(t, "colors"), b = l(t, "ticks", Number), y = l(t, "zIndex", Number), g = ((e = l(t, "origin", Object)).x = l(e, "x", Number), e.y = l(e, "y", Number), e), M = r, p = [], x = o ? o.canvas : (n = y, c(i = document.createElement("canvas")), i.style.position = "fixed", i.style.top = "0px", i.style.left = "0px", i.style.pointerEvents = "none", i.style.zIndex = n, i), v = x.width * g.x, w = x.height * g.y; M--;) {
-							p.push(s({ x: v, y: w, angle: a, spread: d, startVelocity: m, color: h[M % h.length], ticks: b, decay: f }));
-						}return o ? o.addFettis(p) : (document.body.appendChild(x), (o = u(x, p, function () {
-							o = null, document.body.removeChild(x);
-						})).promise);
-					}, e.exports.Promise = t.Promise || null;
+						n = t.requestAnimationFrame || t.webkitRequestAnimationFrame || t.mozRequestAnimationFrame || t.oRequestAnimationFrame || t.msRequestAnimationFrame || function (e) {
+							t.setTimeout(e, 1e3 / 60);
+						},
+						i = { particleCount: 50, angle: 90, spread: 45, startVelocity: 45, decay: .9, ticks: 200, x: .5, y: .5, zIndex: 100, colors: ["#26ccff", "#a25afd", "#ff5e7e", "#88ff5a", "#fcff42", "#ffa62d", "#ff36ff"] }; function r() { } function l(t, e, o) {
+							return n = t && null != t[e] ? t[e] : i[e], (r = o) ? r(n) : n; var n, r;
+						} function a(t) {
+							return parseInt(t, 16);
+						} function c(t) {
+							t.width = document.documentElement.clientWidth, t.height = document.documentElement.clientHeight;
+						} function s(t) {
+							var e,
+								o,
+								n = t.angle * (Math.PI / 180),
+								i = t.spread * (Math.PI / 180); return { x: t.x, y: t.y, wobble: 10 * Math.random(), velocity: .5 * t.startVelocity + Math.random() * t.startVelocity, angle2D: -n + (.5 * i - Math.random() * i), tiltAngle: Math.random() * Math.PI, color: (e = t.color, o = String(e).replace(/[^0-9a-f]/gi, ""), o.length < 6 && (o = o[0] + o[0] + o[1] + o[1] + o[2] + o[2]), { r: a(o.substring(0, 2)), g: a(o.substring(2, 4)), b: a(o.substring(4, 6)) }), tick: 0, totalTicks: t.ticks, decay: t.decay, random: Math.random() + 5, tiltSin: 0, tiltCos: 0, wobbleX: 0, wobbleY: 0 };
+						} function u(o, i, l) {
+							var a = i.slice(),
+								s = o.getContext("2d"),
+								u = o.width,
+								d = o.height; function m() {
+									u = d = null;
+								} var f,
+									h = (f = function f(e) {
+										n(function i() {
+											u || d || (c(o), u = o.width, d = o.height), s.clearRect(0, 0, u, d), (a = a.filter(function (t) {
+												return function (t, e) {
+													e.x += Math.cos(e.angle2D) * e.velocity, e.y += Math.sin(e.angle2D) * e.velocity + 3, e.wobble += .1, e.velocity *= e.decay, e.tiltAngle += .1, e.tiltSin = Math.sin(e.tiltAngle), e.tiltCos = Math.cos(e.tiltAngle), e.random = Math.random() + 5, e.wobbleX = e.x + 10 * Math.cos(e.wobble), e.wobbleY = e.y + 10 * Math.sin(e.wobble); var o = e.tick++ / e.totalTicks,
+														n = e.x + e.random * e.tiltCos,
+														i = e.y + e.random * e.tiltSin,
+														r = e.wobbleX + e.random * e.tiltCos,
+														l = e.wobbleY + e.random * e.tiltSin; return t.fillStyle = "rgba(" + e.color.r + ", " + e.color.g + ", " + e.color.b + ", " + (1 - o) + ")", t.beginPath(), t.moveTo(Math.floor(e.x), Math.floor(e.y)), t.lineTo(Math.floor(e.wobbleX), Math.floor(i)), t.lineTo(Math.floor(r), Math.floor(l)), t.lineTo(Math.floor(n), Math.floor(e.wobbleY)), t.closePath(), t.fill(), e.tick < e.totalTicks;
+												}(s, t);
+											})).length ? n(i) : (t.removeEventListener("resize", m), l(), e());
+										});
+									}, e.exports.Promise ? new e.exports.Promise(f) : (f(r), null)); return t.addEventListener("resize", m, !1), {
+										addFettis: function addFettis(t) {
+											return a = a.concat(t), h;
+										}, canvas: o, promise: h
+									};
+						} e.exports = function (t) {
+							for (var e, n, i, r = l(t, "particleCount", Math.floor), a = l(t, "angle", Number), d = l(t, "spread", Number), m = l(t, "startVelocity", Number), f = l(t, "decay", Number), h = l(t, "colors"), b = l(t, "ticks", Number), y = l(t, "zIndex", Number), g = ((e = l(t, "origin", Object)).x = l(e, "x", Number), e.y = l(e, "y", Number), e), M = r, p = [], x = o ? o.canvas : (n = y, c(i = document.createElement("canvas")), i.style.position = "fixed", i.style.top = "0px", i.style.left = "0px", i.style.pointerEvents = "none", i.style.zIndex = n, i), v = x.width * g.x, w = x.height * g.y; M--;) {
+								p.push(s({ x: v, y: w, angle: a, spread: d, startVelocity: m, color: h[M % h.length], ticks: b, decay: f }));
+							} return o ? o.addFettis(p) : (document.body.appendChild(x), (o = u(x, p, function () {
+								o = null, document.body.removeChild(x);
+							})).promise);
+						}, e.exports.Promise = t.Promise || null;
 				}(), t.confetti = e.exports;
 			}(window);
 
@@ -1821,7 +1823,7 @@ function onYouTubeIframeAPIReady() {
 
 			function openPromoPopup() {
 				var pause = $promoPopup.attr('data-pause') > 0 ? $promoPopup.attr('data-pause') : 2000,
-				    src = $promoPopup.attr('data-src');
+					src = $promoPopup.attr('data-src');
 				setTimeout(function () {
 					$.fancybox.open([{
 						src: src,
@@ -1938,7 +1940,7 @@ function onYouTubeIframeAPIReady() {
 				}, 1000);
 			}
 			var $newsletter = $(modal),
-			    $checkBox = $(checkbox);
+				$checkBox = $(checkbox);
 			if ($newsletter.attr('data-only-index') == 'true' && !$('body[class*="page-index"]').length) {
 				return false;
 			}
@@ -2067,9 +2069,9 @@ function onYouTubeIframeAPIReady() {
 
 			$(_countdown).each(function () {
 				var $countdown = $(this),
-				    promoperiod = void 0,
-				    isActual = false,
-				    timeLocale = ['DAYS', 'HRS', 'MIN', 'SEC'];
+					promoperiod = void 0,
+					isActual = false,
+					timeLocale = ['DAYS', 'HRS', 'MIN', 'SEC'];
 				if ($body.data('time-locale')) {
 					timeLocale = $body.data('time-locale').split('/');
 				}
@@ -2098,7 +2100,7 @@ function onYouTubeIframeAPIReady() {
 		},
 		productTab: function productTab(tab) {
 			var $tabs = $(tab),
-			    setCurrent = false;
+				setCurrent = false;
 			$tabs.tabCollapse({
 				accordion: true,
 				tabsClass: 'd-none d-lg-flex',
@@ -2207,7 +2209,7 @@ function onYouTubeIframeAPIReady() {
 					var that = this;
 					$(bnr).each(function () {
 						var $this = $(this),
-						    fontratio = Math.round($this.attr('data-fontratio') * 100) / 100;
+							fontratio = Math.round($this.attr('data-fontratio') * 100) / 100;
 						$this.removeClass('fontratio-calc');
 						if (fontratio > 0) {
 							that._changes($this, fontratio);
@@ -2216,10 +2218,10 @@ function onYouTubeIframeAPIReady() {
 				},
 				_changes: function _changes(el, fontRatio) {
 					var $el = $(el),
-					    elw = $el.width(),
-					    width = elw > this.default.maximum ? this.default.maximum : elw < this.default.minimum ? this.default.minimum : elw,
-					    fontBase = width / fontRatio,
-					    fontSize = fontBase > this.default.maxFont ? this.default.maxFont : fontBase < this.default.minFont ? this.default.minFont : fontBase;
+						elw = $el.width(),
+						width = elw > this.default.maximum ? this.default.maximum : elw < this.default.minimum ? this.default.minimum : elw,
+						fontBase = width / fontRatio,
+						fontSize = fontBase > this.default.maxFont ? this.default.maxFont : fontBase < this.default.minFont ? this.default.minFont : fontBase;
 					setTimeout(function () {
 						$el.css('font-size', fontSize + 'px').addClass('fontratio-calc');
 					}, 100);
@@ -2250,11 +2252,11 @@ function onYouTubeIframeAPIReady() {
 			};
 			$document.on('click', '.js-qty-button', function (e) {
 				var $this = $(e.target),
-				    input = $this.parent().find('.qty-input'),
-				    v = $this.hasClass('decrease') ? input.val() - 1 : input.val() * 1 + 1,
-				    min = input.attr('data-min') ? input.attr('data-min') : 1,
-				    max = input.attr('data-max') ? input.attr('data-max') : false,
-				    inputWidth = void 0;
+					input = $this.parent().find('.qty-input'),
+					v = $this.hasClass('decrease') ? input.val() - 1 : input.val() * 1 + 1,
+					min = input.attr('data-min') ? input.attr('data-min') : 1,
+					max = input.attr('data-max') ? input.attr('data-max') : false,
+					inputWidth = void 0;
 				if (v >= min) {
 					if (!max == false && v > max) {
 						return false;
@@ -2266,10 +2268,10 @@ function onYouTubeIframeAPIReady() {
 			});
 			$document.on('input', '.qty-input', function (e) {
 				var input = $(e.target),
-				    min = input.attr('data-min') ? input.attr('data-min') : 1,
-				    max = input.attr('data-max') ? input.attr('data-max') : 1000,
-				    v = Math.round(input.val()),
-				    inputWidth = 0;
+					min = input.attr('data-min') ? input.attr('data-min') : 1,
+					max = input.attr('data-max') ? input.attr('data-max') : 1000,
+					v = Math.round(input.val()),
+					inputWidth = 0;
 				if (v > max) {
 					input.val(max);
 				} else if (v < min) {
@@ -2315,7 +2317,7 @@ function onYouTubeIframeAPIReady() {
 				});
 				$modal.on('shown.bs.modal', function () {
 					var interval = 0,
-					    $modal = $(this);
+						$modal = $(this);
 					if ($modal.attr('data-interval') > 0) {
 						interval = $modal.attr('data-interval');
 					}
@@ -2338,8 +2340,8 @@ function onYouTubeIframeAPIReady() {
 		},
 		scrollToDiv: function scrollToDiv(el, speed) {
 			var $header = $('.hdr'),
-			    $el = $(el),
-			    speedScroll = speed ? speed : 300;
+				$el = $(el),
+				speedScroll = speed ? speed : 300;
 			if ($el.length) {
 				$('html,body').animate({
 					scrollTop: $el.offset().top - $header.height()
@@ -2382,7 +2384,7 @@ function onYouTubeIframeAPIReady() {
 				var scrollPos = $document.scrollTop() + 50;
 				$('.hdr-landing-mmenu .mmenu a.js-scroll-to').each(function () {
 					var $currLink = $(this),
-					    $refElement = $($currLink.attr('href'));
+						$refElement = $($currLink.attr('href'));
 					if ($refElement.position().top <= scrollPos && $refElement.position().top + $refElement.height() > scrollPos) {
 						$currLink.parent().siblings().find('.active').removeClass('active');
 						$currLink.addClass('active');
@@ -2403,9 +2405,9 @@ function onYouTubeIframeAPIReady() {
 		},
 		promoTopline: function promoTopline(topline, close) {
 			var $topline = $(topline),
-			    $close = $(close),
-			    speed = 300,
-			    timeout = 1000;
+				$close = $(close),
+				speed = 300,
+				timeout = 1000;
 			if ($('.hdr-mobile-style2').length && isMobile) {
 				speed = 100;
 				timeout = 0;
@@ -2499,18 +2501,18 @@ function onYouTubeIframeAPIReady() {
 					}
 
 					var $menu = $(menu.defaults.menu),
-					    submenu = menu.defaults.submenu,
-					    $submenu = $(menu.defaults.submenu, $menu),
-					    $header = $(menu.defaults.header),
-					    $toggleMenu = $(menu.defaults.toggleMenu),
-					    megaDropdnClass = menu.defaults.megaDropdn,
-					    simpleDropdnClass = menu.defaults.simpleDropdn,
-					    vertical = menu.defaults.vertical,
-					    $headerCart = $(menu.defaults.headerCart),
-					    $headerCartToggleBtn = $headerCart.find(menu.defaults.headerCartToggleBtn),
-					    $headerCartDropdn = $headerCart.find(menu.defaults.headerCartDropdn),
-					    $dropdn = $(menu.defaults.dropdn, $header),
-					    timer = void 0;
+						submenu = menu.defaults.submenu,
+						$submenu = $(menu.defaults.submenu, $menu),
+						$header = $(menu.defaults.header),
+						$toggleMenu = $(menu.defaults.toggleMenu),
+						megaDropdnClass = menu.defaults.megaDropdn,
+						simpleDropdnClass = menu.defaults.simpleDropdn,
+						vertical = menu.defaults.vertical,
+						$headerCart = $(menu.defaults.headerCart),
+						$headerCartToggleBtn = $headerCart.find(menu.defaults.headerCartToggleBtn),
+						$headerCartDropdn = $headerCart.find(menu.defaults.headerCartDropdn),
+						$dropdn = $(menu.defaults.dropdn, $header),
+						timer = void 0;
 					$menu.on('mouseenter.mmenu', megaDropdnClass + '> a,' + simpleDropdnClass + '> a', function () {
 						var $this = $(this);
 						timer = setTimeout(function () {
@@ -2563,7 +2565,7 @@ function onYouTubeIframeAPIReady() {
 						var $this = $(this).addClass('hovered');
 						if ($('> a .mmenu-preview', $this).length) {
 							var $ul = $this.closest('ul'),
-							    $img = $('.mmenu-preview', $this);
+								$img = $('.mmenu-preview', $this);
 							$ul.css({
 								'min-width': '',
 								'overflow': ''
@@ -2576,8 +2578,8 @@ function onYouTubeIframeAPIReady() {
 						}
 						if ($('> .submenu-link-image', $this).length) {
 							var $elm = $('> .submenu-link-image', $this),
-							    isXvisible = $body.hasClass('rtl') ? $elm.offset().left >= 0 : $elm.offset().left + $elm.width() <= w,
-							    isYvisible = h + $window.scrollTop() - ($elm.offset().top + $elm.outerHeight());
+								isXvisible = $body.hasClass('rtl') ? $elm.offset().left >= 0 : $elm.offset().left + $elm.width() <= w,
+								isYvisible = h + $window.scrollTop() - ($elm.offset().top + $elm.outerHeight());
 							if (!isXvisible) {
 								$elm.addClass('to-right');
 							} else {
@@ -2590,8 +2592,8 @@ function onYouTubeIframeAPIReady() {
 							}
 						} else if ($('ul', $this).length) {
 							var _$elm = $('.mmenu-submenu', $this).length ? $('.mmenu-submenu', $this) : $('ul:first', $this),
-							    _isXvisible = 0,
-							    _isYvisible = 0;
+								_isXvisible = 0,
+								_isYvisible = 0;
 							if ($this.closest('.mmenu-item--mega').length && $this.parent().hasClass('submenu-list')) {
 								if (!$body.hasClass('rtl')) {
 									_$elm.css({
@@ -2676,7 +2678,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_handlers: function _handlers() {
 					var _ = this.defaults,
-					    $scroll = $(_.$mobilemenu);
+						$scroll = $(_.$mobilemenu);
 					$(_.mobileMenuScroll).perfectScrollbar();
 					_.$toggleMenu.on('click.mobileMenu', function () {
 						_.$mobilemenu.toggleClass('active');
@@ -2715,7 +2717,7 @@ function onYouTubeIframeAPIReady() {
 				init: function init(options) {
 					$.extend(this.defaults, options);
 					var that = this,
-					    $mmenu = $(that.defaults.initElem);
+						$mmenu = $(that.defaults.initElem);
 					if ($mmenu.length && isMobile) {
 						$mmenu.data('init', true);
 						that._clickHandlers();
@@ -2739,7 +2741,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_clickHandlers: function _clickHandlers() {
 					var that = this,
-					    $mmenu = $(that.defaults.initElem);
+						$mmenu = $(that.defaults.initElem);
 					$mmenu.on('click', 'a', function (e) {
 						if ($(e.target).parent('li').find('ul').length) {
 							e.preventDefault();
@@ -2773,9 +2775,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				_updateMenuTitle: function _updateMenuTitle() {
 					var that = this,
-					    title = that.defaults.menuTitle,
-					    $mmenu = $(that.defaults.initElem),
-					    link = '';
+						title = that.defaults.menuTitle,
+						$mmenu = $(that.defaults.initElem),
+						link = '';
 					if (that.defaults.curLevel > 0) {
 						title = that.defaults.curItem.children('a').html();
 						link = that.defaults.curItem.children('a').attr('href') ? that.defaults.curItem.children('a').attr('href') : '';
@@ -2788,7 +2790,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_updateHeight: function _updateHeight() {
 					var that = this,
-					    $mmenu = $(that.defaults.initElem);
+						$mmenu = $(that.defaults.initElem);
 					if (that.defaults.curLevel > 0) {
 						that.defaults.curItem.children('ul').css({
 							"padding-top": $mmenu.find('.nav-toggle').outerHeight()
@@ -2804,7 +2806,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_slideMenu: function _slideMenu(direction) {
 					var that = this,
-					    $mmenu = $(that.defaults.initElem);
+						$mmenu = $(that.defaults.initElem);
 					if (direction === 'back') {
 						that.defaults.curLevel = that.defaults.curLevel > 0 ? that.defaults.curLevel - 1 : 0;
 						setTimeout(function () {
@@ -2856,11 +2858,11 @@ function onYouTubeIframeAPIReady() {
 				},
 				_handlers: function _handlers() {
 					var that = this,
-					    $dropLink = $(that.defaults.dropLink),
-					    $dropLinkParent = $dropLink.closest(that.defaults.dropLinkParent),
-					    $dropClose = $(that.defaults.dropClose),
-					    $scroll = $(that.defaults.dropContentScroll),
-					    $popupCheckCart = $(that.defaults.popupCheckCart);
+						$dropLink = $(that.defaults.dropLink),
+						$dropLinkParent = $dropLink.closest(that.defaults.dropLinkParent),
+						$dropClose = $(that.defaults.dropClose),
+						$scroll = $(that.defaults.dropContentScroll),
+						$popupCheckCart = $(that.defaults.popupCheckCart);
 					$(that.defaults.dropContentScroll).perfectScrollbar();
 					if (isMobile) {
 						if (!$dropLink.data('mclick')) {
@@ -2872,7 +2874,7 @@ function onYouTubeIframeAPIReady() {
 							$dropLink.on('click.dropdn', function (e) {
 								bodyScrollLock.disableBodyScroll($scroll);
 								var $this = $(this),
-								    $panel = $($this.data('panel')).length ? $($this.data('panel')) : $this.next();
+									$panel = $($this.data('panel')).length ? $($this.data('panel')) : $this.next();
 								if ($this.closest('.js-popupAddToCart').length) {
 									THEME.selectModal && THEME.selectModal.ifOpened() && THEME.selectModal.close();
 									THEME.checkOutModal && THEME.checkOutModal.ifOpened() && THEME.checkOutModal.close();
@@ -2933,7 +2935,7 @@ function onYouTubeIframeAPIReady() {
 							$dropLinkParent.off('.dropdn');
 							$dropLink.on('click.dropdn', function (e) {
 								var $this = $(this),
-								    $panel = $($this.data('panel')).length ? $($this.data('panel')) : $this.next();
+									$panel = $($this.data('panel')).length ? $($this.data('panel')) : $this.next();
 								if ($this.closest('.js-popupAddToCart').length) {
 									THEME.selectModal && THEME.selectModal.ifOpened() && THEME.selectModal.close();
 									THEME.checkOutModal && THEME.checkOutModal.ifOpened() && THEME.checkOutModal.close();
@@ -3012,8 +3014,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				_getDropHeight: function _getDropHeight(dropdn) {
 					var dropH = void 0,
-					    yPos = void 0,
-					    $parent = dropdn.closest('.container');
+						yPos = void 0,
+						$parent = dropdn.closest('.container');
 					if ($parent.length && dropdn.closest('.dropdn_fullheight,.dropdn_fullwidth').length) {
 						if (!$('.hdr-content-sticky').length) {
 							yPos = $parent.outerHeight() + $parent.offset().top - $window.scrollTop();
@@ -3029,9 +3031,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				_getDropPos: function _getDropPos(dropdn) {
 					var that = this,
-					    $header = $(that.defaults.header),
-					    $parent = dropdn.closest('.container'),
-					    yPos = void 0;
+						$header = $(that.defaults.header),
+						$parent = dropdn.closest('.container'),
+						yPos = void 0;
 					if ($parent.length) {
 						if (dropdn.closest('.dropdn_fullheight').length) {
 							yPos = 0;
@@ -3049,7 +3051,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				reinitHeight: function reinitHeight() {
 					var that = this,
-					    $this = $(that.defaults.dropLinkParent);
+						$this = $(that.defaults.dropLinkParent);
 					$this.each(function () {
 						var _ = $(this).find(that.defaults.dropContent);
 						if (!isMobile) {
@@ -3144,8 +3146,8 @@ function onYouTubeIframeAPIReady() {
 					},
 					_setScroll: function _setScroll() {
 						var that = this,
-						    offset = that.defaults.offset + $(that.defaults.headerSticky).outerHeight(),
-						    checkColission = !isMobile || $(that.defaults.stickyCollision).length ? true : false;
+							offset = that.defaults.offset + $(that.defaults.headerSticky).outerHeight(),
+							checkColission = !isMobile || $(that.defaults.stickyCollision).length ? true : false;
 
 						function isCollapsed(el1, el2) {
 							if (!$body.hasClass('has-sticky')) return false;
@@ -3175,7 +3177,7 @@ function onYouTubeIframeAPIReady() {
 							if (checkColission) {
 								$(that.defaults.stickyCollision).each(function () {
 									var $this = $(this),
-									    h = parseInt($(that.defaults.headerSticky).outerHeight(), 10);
+										h = parseInt($(that.defaults.headerSticky).outerHeight(), 10);
 									if (isCollapsed($this, $(that.defaults.headerSticky))) {
 										$this.addClass('is-collision');
 										if ($this.hasClass('js-filter-col')) {
@@ -3220,7 +3222,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_setTop: function _setTop() {
 						var that = this,
-						    top = $('.js-hdr-top:visible').outerHeight();
+							top = $('.js-hdr-top:visible').outerHeight();
 						$(that.defaults.header).css({
 							'top': 0 - top
 						});
@@ -3242,7 +3244,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_setHeigth: function _setHeigth() {
 						var $header = $(this.defaults.header),
-						    $hdrNav = $(this.defaults.hdrNav);
+							$hdrNav = $(this.defaults.hdrNav);
 						$hdrNav.css({
 							'height': ''
 						});
@@ -3360,9 +3362,9 @@ function onYouTubeIframeAPIReady() {
 			THEME.quickView = {
 				init: function init(options) {
 					var that = this,
-					    $modalQuickView = $('#modalQuickView');
+						$modalQuickView = $('#modalQuickView');
 					var $mainCarousel = $('.js-product-main-carousel-qw'),
-					    $prwCarousel = $('.js-product-previews-carousel-qw');
+						$prwCarousel = $('.js-product-previews-carousel-qw');
 					$document.on('click', '.js-prd-quickview', function (e) {
 						var src = $(this).data('src');
 						$.fancybox.open({
@@ -3464,7 +3466,7 @@ function onYouTubeIframeAPIReady() {
 				init: function init(options) {
 					$.extend(this.defaults, options);
 					var that = this,
-					    $popup = $(that.defaults.popup);
+						$popup = $(that.defaults.popup);
 					if ($popup.length) {
 						that._handlers();
 					}
@@ -3476,7 +3478,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				setData: function setData(data) {
 					var that = this,
-					    $popup = $(this.defaults.popup);
+						$popup = $(this.defaults.popup);
 					$popup.removeClass('has-error');
 					$(this.defaults.title, $popup).empty().html('<b>' + data.name + '</b>');
 					$(this.defaults.title, $popup).attr('href', data.url);
@@ -3520,7 +3522,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_correctHeight: function _correctHeight() {
 					var that = this,
-					    h = $(that.defaults.popup).find('.container').outerHeight();
+						h = $(that.defaults.popup).find('.container').outerHeight();
 					anime({
 						targets: that.defaults.popup,
 						height: {
@@ -3532,8 +3534,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				_setHeigth: function _setHeigth() {
 					var $popup = $(this.defaults.popup),
-					    popupAlt = this.defaults.popupAlt,
-					    h = $popup.find('.container').outerHeight();
+						popupAlt = this.defaults.popupAlt,
+						h = $popup.find('.container').outerHeight();
 					for (var i = 0; i < popupAlt.length; ++i) {
 						if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
 							h += $(popupAlt[i]).find('.container').outerHeight();
@@ -3546,7 +3548,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_handlers: function _handlers() {
 					var that = this,
-					    $popup = $(that.defaults.popup);
+						$popup = $(that.defaults.popup);
 					$(document).on('click', that.defaults.button, function (e) {
 						var product_data = $(this).data('product');
 						if (!$popup.hasClass('closed')) {
@@ -3568,10 +3570,10 @@ function onYouTubeIframeAPIReady() {
 				},
 				open: function open() {
 					var that = this,
-					    $popup = $(that.defaults.popup),
-					    $qty = $popup.find('.qty-input'),
-					    h = $popup.find('.container').outerHeight(),
-					    duration = 300;
+						$popup = $(that.defaults.popup),
+						$qty = $popup.find('.qty-input'),
+						h = $popup.find('.container').outerHeight(),
+						duration = 300;
 					$popup.removeClass('closed');
 					$qty.val($qty.data('min'));
 					that._setHeigth();
@@ -3592,10 +3594,10 @@ function onYouTubeIframeAPIReady() {
 				},
 				close: function close() {
 					var that = this,
-					    $popup = $(that.defaults.popup),
-					    popupAlt = $(that.defaults.popupAlt),
-					    duration = 300,
-					    h = 0;
+						$popup = $(that.defaults.popup),
+						popupAlt = $(that.defaults.popupAlt),
+						duration = 300,
+						h = 0;
 					for (var i = 0; i < popupAlt.length; ++i) {
 						if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
 							h += $(popupAlt[i]).find('.container').outerHeight();
@@ -3646,7 +3648,7 @@ function onYouTubeIframeAPIReady() {
 					init: function init(options) {
 						$.extend(this.defaults, options);
 						var that = this,
-						    $popup = $(that.defaults.popup);
+							$popup = $(that.defaults.popup);
 						if ($popup.length) {
 							that._handlers();
 						}
@@ -3658,7 +3660,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_setProduct: function _setProduct(data) {
 						var that = this,
-						    $popup = $(this.defaults.popup);
+							$popup = $(this.defaults.popup);
 						$popup.removeClass('has-error');
 						if (data) {
 							$(that.defaults.title, $popup).find('a').empty().html('<b>' + data.name + '</b>');
@@ -3685,7 +3687,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_setFormData: function _setFormData(data) {
 						var that = this,
-						    $popup = $(this.defaults.popup);
+							$popup = $(this.defaults.popup);
 						if (data) {
 							var $btn = $('.btn', $popup);
 							$btn.data('variant-id', data.id);
@@ -3698,7 +3700,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					setData: function setData(data) {
 						var that = this,
-						    $popup = $(this.defaults.popup);
+							$popup = $(this.defaults.popup);
 						that._setProduct(data);
 						$(that.defaults.options, $popup).find('option').remove();
 						$.each(data.variants, function (key, value) {
@@ -3727,7 +3729,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_correctHeight: function _correctHeight() {
 						var that = this,
-						    h = $(that.defaults.popup).find('.container').outerHeight();
+							h = $(that.defaults.popup).find('.container').outerHeight();
 						anime({
 							targets: that.defaults.popup,
 							height: {
@@ -3739,8 +3741,8 @@ function onYouTubeIframeAPIReady() {
 					},
 					_setHeigth: function _setHeigth() {
 						var $popup = $(this.defaults.popup),
-						    popupAlt = this.defaults.popupAlt,
-						    h = $popup.find('.container').outerHeight();
+							popupAlt = this.defaults.popupAlt,
+							h = $popup.find('.container').outerHeight();
 						for (var i = 0; i < popupAlt.length; ++i) {
 							if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
 								h += $(popupAlt[i]).find('.container').outerHeight();
@@ -3753,7 +3755,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_handlers: function _handlers() {
 						var that = this,
-						    $popup = $(that.defaults.popup);
+							$popup = $(that.defaults.popup);
 						$(that.defaults.options, $popup).on('change', function () {
 							that._setProduct($('option:selected', this).data('variant'));
 							that._setFormData($('option:selected', this).data('variant'));
@@ -3800,7 +3802,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					setTimer: function setTimer(pause) {
 						var that = this,
-						    $popup = $(that.defaults.popup);
+							$popup = $(that.defaults.popup);
 						clearTimeout(that.timer);
 						if (pause) {
 							that.timer = setTimeout(function () {
@@ -3814,10 +3816,10 @@ function onYouTubeIframeAPIReady() {
 					},
 					open: function open() {
 						var that = this,
-						    $popup = $(that.defaults.popup),
-						    $qty = $popup.find('.qty-input'),
-						    h = $popup.find('.container').outerHeight(),
-						    duration = 300;
+							$popup = $(that.defaults.popup),
+							$qty = $popup.find('.qty-input'),
+							h = $popup.find('.container').outerHeight(),
+							duration = 300;
 						$popup.removeClass('closed');
 						$qty.val($qty.data('min'));
 						that._setHeigth();
@@ -3833,10 +3835,10 @@ function onYouTubeIframeAPIReady() {
 					},
 					close: function close(all) {
 						var that = this,
-						    $popup = $(that.defaults.popup),
-						    popupAlt = $(that.defaults.popupAlt),
-						    duration = 300,
-						    h = 0;
+							$popup = $(that.defaults.popup),
+							popupAlt = $(that.defaults.popupAlt),
+							duration = 300,
+							h = 0;
 						for (var i = 0; i < popupAlt.length; ++i) {
 							if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
 								h += $(popupAlt[i]).find('.container').outerHeight();
@@ -3870,10 +3872,10 @@ function onYouTubeIframeAPIReady() {
 					},
 					hide: function hide() {
 						var that = this,
-						    $popup = $(that.defaults.popup),
-						    popupAlt = $(that.defaults.popupAlt),
-						    duration = 200,
-						    h = 0;
+							$popup = $(that.defaults.popup),
+							popupAlt = $(that.defaults.popupAlt),
+							duration = 200,
+							h = 0;
 						for (var i = 0; i < popupAlt.length; ++i) {
 							if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
 								h += $(popupAlt[i]).find('.container').outerHeight();
@@ -3899,11 +3901,11 @@ function onYouTubeIframeAPIReady() {
 					},
 					show: function show() {
 						var that = this,
-						    $popup = $(that.defaults.popup),
-						    popupAlt = $(that.defaults.popupAlt),
-						    hPopup = $popup.data('height') ? $popup.data('height') : $popup.find('.container').outerHeight(),
-						    duration = 200,
-						    h = 0;
+							$popup = $(that.defaults.popup),
+							popupAlt = $(that.defaults.popupAlt),
+							hPopup = $popup.data('height') ? $popup.data('height') : $popup.find('.container').outerHeight(),
+							duration = 200,
+							h = 0;
 						if (that.defaults.sticky && $popup.hasClass('closed')) {
 							return false;
 						}
@@ -3962,8 +3964,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				_setHeigth: function _setHeigth() {
 					var $loader = $(this.defaults.loader),
-					    popupAlt = $(this.defaults.popupAlt),
-					    h = this.defaults.height;
+						popupAlt = $(this.defaults.popupAlt),
+						h = this.defaults.height;
 					if (isMobile) h = 50;
 					for (var i = 0; i < popupAlt.length; ++i) {
 						if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
@@ -3977,9 +3979,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				open: function open() {
 					var that = this,
-					    $loader = $(that.defaults.loader),
-					    h = this.defaults.height,
-					    duration = 200;
+						$loader = $(that.defaults.loader),
+						h = this.defaults.height,
+						duration = 200;
 					if (isMobile) h = 50;
 					$loader.removeClass('closed');
 					that._setHeigth();
@@ -3997,10 +3999,10 @@ function onYouTubeIframeAPIReady() {
 				},
 				close: function close() {
 					var that = this,
-					    $loader = $(that.defaults.loader),
-					    popupAlt = $(that.defaults.popupAlt),
-					    duration = 200,
-					    h = 0;
+						$loader = $(that.defaults.loader),
+						popupAlt = $(that.defaults.popupAlt),
+						duration = 200,
+						h = 0;
 					for (var i = 0; i < popupAlt.length; ++i) {
 						if (!$(popupAlt[i]).hasClass('closed') && $(popupAlt[i]).length) {
 							h += $(popupAlt[i]).find('.container').outerHeight();
@@ -4033,8 +4035,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				open: function open() {
 					var that = this,
-					    $loader = $(that.defaults.loader),
-					    duration = 500;
+						$loader = $(that.defaults.loader),
+						duration = 500;
 					$loader.removeClass('d-none');
 					anime({
 						targets: that.defaults.loader,
@@ -4045,8 +4047,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				close: function close() {
 					var that = this,
-					    $loader = $(that.defaults.loader),
-					    duration = 500;
+						$loader = $(that.defaults.loader),
+						duration = 500;
 					anime({
 						targets: that.defaults.loader,
 						easing: 'linear',
@@ -4071,9 +4073,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				open: function open() {
 					var that = this,
-					    $grid = $(that.defaults.grid),
-					    $loader = $grid.next(that.defaults.loader),
-					    duration = 500;
+						$grid = $(that.defaults.grid),
+						$loader = $grid.next(that.defaults.loader),
+						duration = 500;
 					$grid.addClass('disable-actions');
 					$loader.removeClass('d-none').addClass('is-centered');
 					anime({
@@ -4085,9 +4087,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				close: function close() {
 					var that = this,
-					    $grid = $(that.defaults.grid),
-					    $loader = $grid.next(that.defaults.loader),
-					    duration = 500;
+						$grid = $(that.defaults.grid),
+						$loader = $grid.next(that.defaults.loader),
+						duration = 500;
 					anime({
 						targets: that.defaults.grid,
 						easing: 'linear',
@@ -4113,9 +4115,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				open: function open(sectionID, button) {
 					var that = this,
-					    $grid = $(that.defaults.grid, $('#' + sectionID)),
-					    $loader = $grid.find(that.defaults.loader),
-					    duration = 500;
+						$grid = $(that.defaults.grid, $('#' + sectionID)),
+						$loader = $grid.find(that.defaults.loader),
+						duration = 500;
 					if (!button) {
 						$loader = $grid.next(that.defaults.loader);
 						$loader.removeClass('d-none');
@@ -4139,9 +4141,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				close: function close(sectionID, button) {
 					var that = this,
-					    $grid = $(that.defaults.grid, $('#' + sectionID)),
-					    $loader = $grid.find(that.defaults.loader),
-					    duration = 500;
+						$grid = $(that.defaults.grid, $('#' + sectionID)),
+						$loader = $grid.find(that.defaults.loader),
+						duration = 500;
 					if (!button) {
 						$loader = $grid.next(that.defaults.loader);
 					}
@@ -4172,11 +4174,11 @@ function onYouTubeIframeAPIReady() {
 		},
 		addToWishlist: function addToWishlist(link) {
 			var $link = $(link),
-			    $modalAdd = $('#modalWishlistAdd'),
-			    $modalRemoved = $('#modalWishlistRemove');
+				$modalAdd = $('#modalWishlistAdd'),
+				$modalRemoved = $('#modalWishlistRemove');
 			$link.on('click', function (e) {
 				var $this = $(this),
-				    $modal = $this.hasClass('active') ? $modalRemoved : $modalAdd;
+					$modal = $this.hasClass('active') ? $modalRemoved : $modalAdd;
 				$.fancybox.open($modal, {
 					animationDuration: 350,
 					touch: false
@@ -4199,7 +4201,7 @@ function onYouTubeIframeAPIReady() {
 			var swatch = '.js-size-list a';
 			$document.on('click', swatch, function (e) {
 				var $this = $(this),
-				    $select = $($this.closest('.swatches').find('select'));
+					$select = $($this.closest('.swatches').find('select'));
 				if (!$this.parent('li').is('.active')) {
 					$this.closest('.js-size-list').find('li').removeClass('active');
 					$this.parent('li').addClass('active');
@@ -4212,18 +4214,18 @@ function onYouTubeIframeAPIReady() {
 		swatchToggle: function swatchToggle(option) {
 			$(option).each(function () {
 				var $option = $(this),
-				    $optionlist = $('ul', $option),
-				    $optionbtn = $('a', $optionlist),
-				    $optionselect = $('select', $option),
-				    $productblock = $option.closest('.prd-block'),
-				    $carousel = $productblock.find('.product-main-carousel'),
-				    $previewsCarousel = $productblock.find('.product-previews-carousel');
+					$optionlist = $('ul', $option),
+					$optionbtn = $('a', $optionlist),
+					$optionselect = $('select', $option),
+					$productblock = $option.closest('.prd-block'),
+					$carousel = $productblock.find('.product-main-carousel'),
+					$previewsCarousel = $productblock.find('.product-previews-carousel');
 				if (!$optionlist.hasClass('js-list-filter')) {
 					$optionlist.find("a[data-value='" + $optionselect.val() + "']").parent().addClass('active');
 				}
 				$optionbtn.on('click touchstart', function (e) {
 					var $this = $(this),
-					    currentSelect = $this.attr('data-value');
+						currentSelect = $this.attr('data-value');
 					if (!$optionlist.hasClass('js-list-filter')) {
 						if (currentSelect) {
 							$carousel.find('.slick-slide').each(function (i) {
@@ -4285,9 +4287,9 @@ function onYouTubeIframeAPIReady() {
 						if ($el.hasClass('active')) return false;
 						if ($el.data('image')) {
 							var $prd = $el.closest(that.defaults.product),
-							    $image = $prd.find(that.defaults.image),
-							    imgSrc = $el.data('image'),
-							    widthAuto = false;
+								$image = $prd.find(that.defaults.image),
+								imgSrc = $el.data('image'),
+								widthAuto = false;
 							if ($image.length > 1) {
 								$image.first().remove();
 							}
@@ -4368,12 +4370,12 @@ function onYouTubeIframeAPIReady() {
 				},
 				_galleryBuild: function _galleryBuild() {
 					var that = this,
-					    $carousel = $(that.defaults.carousel),
-					    _galleryObj = [];
+						$carousel = $(that.defaults.carousel),
+						_galleryObj = [];
 					$carousel.find('img').each(function () {
 						var $this = $(this),
-						    src = $this.attr('data-zoom-image'),
-						    image = {};
+							src = $this.attr('data-zoom-image'),
+							image = {};
 						image["src"] = src;
 						image["opts"] = {
 							thumb: src,
@@ -4392,13 +4394,13 @@ function onYouTubeIframeAPIReady() {
 				},
 				_zoomLinkEvent: function _zoomLinkEvent() {
 					var that = this,
-					    $zoomLink = $(that.defaults.zoomLink),
-					    $carousel = $(that.defaults.carousel);
+						$zoomLink = $(that.defaults.zoomLink),
+						$carousel = $(that.defaults.carousel);
 					if ($zoomLink.closest('.prd-block').find('.product-previews-carousel').length) {
 						$zoomLink.on('click', function (e) {
 							e.preventDefault();
 							var activeIndex = that._getActiveIndex($carousel),
-							    items = that.galleryObj;
+								items = that.galleryObj;
 							$.fancybox.open(items, {
 								loop: false,
 								animationEffect: 'zoom',
@@ -4454,24 +4456,24 @@ function onYouTubeIframeAPIReady() {
 				// },
 				destroy: function destroy() {
 					var that = this,
-					    $carousel = $(that.defaults.carousel),
-					    $previews = that.defaults.quickView ? $(that.defaults.previews) : $carousel.closest('.prd-block').find(that.defaults.previews);
+						$carousel = $(that.defaults.carousel),
+						$previews = that.defaults.quickView ? $(that.defaults.previews) : $carousel.closest('.prd-block').find(that.defaults.previews);
 					if ($previews.length) {
 						$document.off('click', that.defaults.previews + ' a');
 					}
 				},
 				_handlers: function _handlers() {
 					var that = this,
-					    $carousel = $(that.defaults.carousel),
-					    $mainMedia = $(that.defaults.mainMedia),
-					    $previews = that.defaults.quickView ? $(that.defaults.previews) : $carousel.closest('.prd-block').find(that.defaults.previews),
-					    zoomPosition = $mainMedia.data('zoom-position') ? $mainMedia.data('zoom-position') : false,
-					    fade = false,
-					    asNavForCarousel = false,
-					    asNavForPreview = false,
-					    rows = $previews.closest(that.defaults.doubleSelector).length ? 2 : 1,
-					    slidesToShow = $previews.closest(that.defaults.doubleSelector).length && $previews.closest(that.defaults.verticalSelector).length ? 3 : $previews.closest(that.defaults.verticalSelector).length ? 6 : 4,
-					    slidesToShowT = $previews.closest(that.defaults.doubleSelector).length ? slidesToShow : $previews.closest(that.defaults.verticalSelector).length ? slidesToShow - 1 : slidesToShow;
+						$carousel = $(that.defaults.carousel),
+						$mainMedia = $(that.defaults.mainMedia),
+						$previews = that.defaults.quickView ? $(that.defaults.previews) : $carousel.closest('.prd-block').find(that.defaults.previews),
+						zoomPosition = $mainMedia.data('zoom-position') ? $mainMedia.data('zoom-position') : false,
+						fade = false,
+						asNavForCarousel = false,
+						asNavForPreview = false,
+						rows = $previews.closest(that.defaults.doubleSelector).length ? 2 : 1,
+						slidesToShow = $previews.closest(that.defaults.doubleSelector).length && $previews.closest(that.defaults.verticalSelector).length ? 3 : $previews.closest(that.defaults.verticalSelector).length ? 6 : 4,
+						slidesToShowT = $previews.closest(that.defaults.doubleSelector).length ? slidesToShow : $previews.closest(that.defaults.verticalSelector).length ? slidesToShow - 1 : slidesToShow;
 					if ($previews.data('desktop')) {
 						slidesToShow = $previews.data('desktop');
 					}
@@ -4483,7 +4485,7 @@ function onYouTubeIframeAPIReady() {
 						asNavForCarousel = that.defaults.previews;
 					}
 					var startSlide = 0,
-					    startSlidePreviews = 0;
+						startSlidePreviews = 0;
 					if ($previews.length) {
 						startSlide = $previews.find('.active').length ? $previews.find('.active').index() : 0;
 						if ($previews.closest(that.defaults.doubleSelector).length) {
@@ -4499,17 +4501,22 @@ function onYouTubeIframeAPIReady() {
 					var slickCarouselParams = void 0;
 					if ($previews.length) {
 						slickCarouselParams = {
-							slidesToShow: 2,
-							arrows: true,
-							infinite: false,
-							fade: fade,
-							speed: 500,
+
 							initialSlide: startSlide,
 							asNavFor: asNavForCarousel,
-							adaptiveHeight: true
-						};
-					} 
-					else {
+							adaptiveHeight: true,
+							responsive: [
+								{
+									breakpoint: 991,
+									settings: {
+										slidesToShow: 1,
+										infinite: true,
+										dots: true,
+									},
+								},
+							],
+						}
+					} else {
 						slickCarouselParams = {
 							slidesToShow: 2,
 							arrows: true,
@@ -4554,7 +4561,7 @@ function onYouTubeIframeAPIReady() {
 							});
 							if (slick.closest(that.defaults.doubleSelector).length) {
 								var previewsRow = currentSlide < 2 ? 0 : Math.floor(currentSlide / 2),
-								    previewsColumn = currentSlide % 2 + 1;
+									previewsColumn = currentSlide % 2 + 1;
 								$previews.find('.active').removeClass('active');
 								$previews.slick('slickGoTo', previewsRow);
 								$previews.find('.slick-slide[data-slick-index="' + previewsRow + '"] > div:nth-child(' + previewsColumn + ') > a').addClass('active');
@@ -4672,8 +4679,8 @@ function onYouTubeIframeAPIReady() {
 								$carousel.slick('slickSetOption', 'speed', 100);
 								if ($this.closest(that.defaults.doubleSelector).length) {
 									var slidenumber = $this.closest('.slick-slide').data('slick-index'),
-									    allCount = $previews.find('.slick-slide').length,
-									    showCount = $previews.find('.slick-active').length;
+										allCount = $previews.find('.slick-slide').length,
+										showCount = $previews.find('.slick-active').length;
 									$carousel.slick('slickGoTo', $this.closest('.slick-slide').data('slick-index') * 2 + $this.parent().index(), false);
 									if (slidenumber > allCount - showCount) {
 										$previews.slick('slickGoTo', allCount - showCount, false);
@@ -4692,9 +4699,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				switchImage: function switchImage(id) {
 					var that = this,
-					    $carousel = $(that.defaults.carousel),
-					    $previews = that.defaults.quickView ? $(that.defaults.previews) : $carousel.closest('.prd-block').find(that.defaults.previews),
-					    $slide = void 0;
+						$carousel = $(that.defaults.carousel),
+						$previews = that.defaults.quickView ? $(that.defaults.previews) : $carousel.closest('.prd-block').find(that.defaults.previews),
+						$slide = void 0;
 					if ($previews.length) {
 						$slide = $previews.find('[data-image-id=' + id + ']');
 						$slide.trigger('click');
@@ -4742,7 +4749,7 @@ function onYouTubeIframeAPIReady() {
 			$document.on('mouseenter', product, function (e) {
 				if (w < maxMD) return false;
 				var $this = $(this),
-				    $slick = $this.closest('.slick-list');
+					$slick = $this.closest('.slick-list');
 				if ($this.closest('.single-prd-carousel').length || $this.closest('.prd-listview').length) return false;
 				if (!$(this).hasClass('prd--action-off')) {
 					$this.css({
@@ -4792,9 +4799,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				clearAllAnimation: function clearAllAnimation() {
 					var that = this,
-					    $empty = $(that.defaults.empty),
-					    $prd = $(that.defaults.minicartProduct),
-					    $prdWrap = $(that.defaults.prdWrap);
+						$empty = $(that.defaults.empty),
+						$prd = $(that.defaults.minicartProduct),
+						$prdWrap = $(that.defaults.prdWrap);
 					$empty.removeClass('d-none');
 					var h = $empty[0].scrollHeight;
 					var showEmpty = anime.timeline({
@@ -4822,8 +4829,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				removeAnimation: function removeAnimation($link) {
 					var that = this,
-					    $minicart = $(that.defaults.minicart),
-					    $prd = $link.closest('.minicart-prd');
+						$minicart = $(that.defaults.minicart),
+						$prd = $link.closest('.minicart-prd');
 					$minicart.addClass('disable-actions');
 					anime({
 						targets: $prd[0],
@@ -4847,8 +4854,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				removeAnimationAll: function removeAnimationAll() {
 					var that = this,
-					    $empty = $(that.defaults.empty),
-					    h = $empty[0].scrollHeight;
+						$empty = $(that.defaults.empty),
+						h = $empty[0].scrollHeight;
 					var showEmpty = anime.timeline({
 						easing: 'linear'
 					});
@@ -4896,7 +4903,7 @@ function onYouTubeIframeAPIReady() {
 				var $this = $(this);
 				$this.removeClass('prd-w-xl prd-w-lg prd-w-md prd-w-sm prd-w-xs prd-w-xxs');
 				var w = $this.find('.prd-img-area').width(),
-				    wClass = 'prd-w-xl';
+					wClass = 'prd-w-xl';
 				if (w >= 250 && w < 300) {
 					wClass = 'prd-w-lg';
 				} else if (w >= 220 && w < 250) {
@@ -4938,13 +4945,13 @@ function onYouTubeIframeAPIReady() {
 		countdownCircle: function countdownCircle() {
 
 			var $countdownCircleTimer = $('.countdownCircleTimer'),
-			    $shippingDate = $('.js-prd-shipping-date'),
-			    $deliveryDate = $('.js-prd-delivery-date');
+				$shippingDate = $('.js-prd-shipping-date'),
+				$deliveryDate = $('.js-prd-delivery-date');
 			if (!$countdownCircleTimer.length) return false;
 			var dataTime = $countdownCircleTimer.data('time').split(',');
 			var time1 = dataTime[0],
-			    time2 = dataTime[1],
-			    time3 = dataTime[2];
+				time2 = dataTime[1],
+				time3 = dataTime[2];
 			var dt = new Date();
 			var date = dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
 			var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
@@ -4952,7 +4959,7 @@ function onYouTubeIframeAPIReady() {
 
 			function closestTime(array, num) {
 				var i = 0,
-				    ans = void 0;
+					ans = void 0;
 				for (i in array) {
 					var m = array[i] - num;
 					if (m > 0) {
@@ -4970,9 +4977,9 @@ function onYouTubeIframeAPIReady() {
 			}
 
 			var closesTime = closestTime(array, dt),
-			    timeBreikpoint = closesTime.getHours() + ":" + closesTime.getMinutes() + ":" + closesTime.getSeconds(),
-			    leftTime = Math.abs(closesTime - dt) / 1000,
-			    format = '<span><span>%H</span>:</span><span><span>%M</span>:</span><span><span>%S</span></span>';
+				timeBreikpoint = closesTime.getHours() + ":" + closesTime.getMinutes() + ":" + closesTime.getSeconds(),
+				leftTime = Math.abs(closesTime - dt) / 1000,
+				format = '<span><span>%H</span>:</span><span><span>%M</span>:</span><span><span>%S</span></span>';
 			$countdownCircleTimer.countdown(date + ' ' + timeBreikpoint, function (event) {
 				$countdownCircleTimer.html(event.strftime(format));
 			}).on('finish.countdown', function () {
@@ -4991,15 +4998,15 @@ function onYouTubeIframeAPIReady() {
 		},
 		visitorsNow: function visitorsNow() {
 			var $count = $('.js-visitors-now'),
-			    vMax = $count.data('vmax') ? $count.data('vmax') : 40,
-			    vMin = $count.data('vmin') ? $count.data('vmin') : 10,
-			    initial = random(vMin, vMax),
-			    count = initial,
-			    speed = 12000;
+				vMax = $count.data('vmax') ? $count.data('vmax') : 40,
+				vMin = $count.data('vmin') ? $count.data('vmin') : 10,
+				initial = random(vMin, vMax),
+				count = initial,
+				speed = 12000;
 
 			function setVisitors() {
 				var variation = random(-2, 2),
-				    current_count = count + variation;
+					current_count = count + variation;
 				if (current_count <= vMax && current_count >= vMin) {
 					count = current_count;
 					$count.html(count);
@@ -5013,8 +5020,8 @@ function onYouTubeIframeAPIReady() {
 		},
 		productSold: function productSold() {
 			var $count = $('.js-prd-last-sold-count'),
-			    soldMax = $count.data('soldmax') ? $count.data('soldmax') : 25,
-			    soldMin = $count.data('soldmin') ? $count.data('soldmin') : 10;
+				soldMax = $count.data('soldmax') ? $count.data('soldmax') : 25,
+				soldMin = $count.data('soldmin') ? $count.data('soldmin') : 10;
 			$count.html(random(soldMin, soldMax));
 		},
 		progressBar: function progressBar() {
@@ -5027,8 +5034,8 @@ function onYouTubeIframeAPIReady() {
 					$.extend(this.data, options);
 					var that = this;
 					var $progress = $(that.data.progress),
-					    $leftCount = $(that.data.leftCount),
-					    dataStock = $progress.data('stock').split(',');
+						$leftCount = $(that.data.leftCount),
+						dataStock = $progress.data('stock').split(',');
 					that.data.stockMax = parseInt(dataStock[0]);
 					that.data.stockMin = parseInt(dataStock[1]);
 					that.data.stockLeftMax = parseInt(dataStock[2]);
@@ -5066,9 +5073,9 @@ function onYouTubeIframeAPIReady() {
 				},
 				_stockDown: function _stockDown(downinterval, stockleft, stockmin) {
 					var that = this,
-					    $progress = $(that.data.progress);
+						$progress = $(that.data.progress);
 					var _stockleft = stockleft,
-					    _stockmin = stockmin;
+						_stockmin = stockmin;
 					var timer = setInterval(function () {
 						_stockleft--;
 						$progress.css({
@@ -5098,8 +5105,8 @@ function onYouTubeIframeAPIReady() {
 				init: function init(options) {
 					$.extend(this.data, options);
 					var that = this,
-					    $stickyAddToCart = $(that.data.stickyAddToCart),
-					    $button = $(that.data.button);
+						$stickyAddToCart = $(that.data.stickyAddToCart),
+						$button = $(that.data.button);
 					if ($stickyAddToCart.length && $button.length) {
 						$window.on('load.stickyAddToCart scroll.stickyAddToCart', function () {
 							that._scrollEvents($stickyAddToCart, $button);
@@ -5121,7 +5128,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_setHeigth: function _setHeigth($stickyAddToCart) {
 					var popupAlt = this.data.popupAlt,
-					    h = $stickyAddToCart.find('.container').outerHeight();
+						h = $stickyAddToCart.find('.container').outerHeight();
 					$stickyAddToCart.removeClass('closed');
 					$('body').css({
 						'margin-bottom': h + 'px'
@@ -5140,7 +5147,7 @@ function onYouTubeIframeAPIReady() {
 					if (st < $button.offset().top) {
 						if (!$stickyAddToCart.hasClass('closed')) {
 							var popupAlt = this.data.popupAlt,
-							    _h = 0;
+								_h = 0;
 							$stickyAddToCart.addClass('closed');
 							$('body').css({
 								'margin-bottom': ''
@@ -5215,7 +5222,7 @@ function onYouTubeIframeAPIReady() {
 				},
 				_reposBlock: function _reposBlock(isMobile) {
 					var $prdInfoDesktop = $(this.default.desktop),
-					    $prdInfoMobile = $(this.default.mobile);
+						$prdInfoMobile = $(this.default.mobile);
 					if (isMobile) {
 						if ($body.hasClass('prd-mob')) return false;
 						$prdInfoDesktop.hide();
@@ -5244,10 +5251,10 @@ function onYouTubeIframeAPIReady() {
 		scrollToReview: function scrollToReview(link, reviewID) {
 			$document.on('click', link, function (e) {
 				var $panReview = $(reviewID),
-				    tabNavs = '.nav-tabs',
-				    tabPane = '.tab-pane',
-				    tabPaneM = '.panel',
-				    header = '.hdr';
+					tabNavs = '.nav-tabs',
+					tabPane = '.tab-pane',
+					tabPaneM = '.panel',
+					header = '.hdr';
 				if ($panReview.length) {
 					if ($panReview.closest(tabPaneM).length) {
 						var $reviewTab = $panReview.closest(tabPaneM).find('.panel-title > a');
@@ -5259,8 +5266,8 @@ function onYouTubeIframeAPIReady() {
 						}, 500);
 					} else if ($panReview.closest(tabPane).length) {
 						var tabReviewID = $panReview.closest(tabPane).attr('id'),
-						    reviewTabNum = $('#' + tabReviewID).index(),
-						    _$reviewTab = $(tabNavs).find('li').eq(reviewTabNum).find('a');
+							reviewTabNum = $('#' + tabReviewID).index(),
+							_$reviewTab = $(tabNavs).find('li').eq(reviewTabNum).find('a');
 						_$reviewTab.trigger('click');
 						$('html,body').animate({
 							scrollTop: $(tabNavs).offset().top - $(header).height()
@@ -5403,7 +5410,7 @@ function onYouTubeIframeAPIReady() {
 		loadMoreAjax: function loadMoreAjax(button) {
 			function updateCircleLoader($button) {
 				var start = $button.data('loaded') * 100 / $button.data('total'),
-				    to = ($button.data('loaded') + $button.data('load')) * 100 / $button.data('total');
+					to = ($button.data('loaded') + $button.data('load')) * 100 / $button.data('total');
 				$button.attr('data-start', start);
 				$button.attr('data-to', to);
 				$('.js-circle-loader-start', $button).html($button.data('loaded'));
@@ -5414,14 +5421,14 @@ function onYouTubeIframeAPIReady() {
 			THEME.catalog.setPersentCircle();
 			$(button).on('click', function (e) {
 				var $this = $(this),
-				    $container = $('.js-category-grid');
+					$container = $('.js-category-grid');
 				THEME.loaderHorizontalSm ? THEME.loaderHorizontalSm.open() : false;
 				if ($this.data('loaded') == $this.data('total')) return false;
 				$.getJSON($this.attr('href'), function (data) {
 					var html = '',
-					    i = 0,
-					    max = Math.min(parseInt($this.data('total'), 10), $this.data('load') + $this.data('loaded')) - 1,
-					    min = parseInt($this.data('loaded'), 10) - 1;
+						i = 0,
+						max = Math.min(parseInt($this.data('total'), 10), $this.data('load') + $this.data('loaded')) - 1,
+						min = parseInt($this.data('loaded'), 10) - 1;
 					$.each(data, function (key, val) {
 						if (i > min && i <= max) {
 							html += val.product;
@@ -5459,8 +5466,8 @@ function onYouTubeIframeAPIReady() {
 				},
 				_handlers: function _handlers() {
 					var that = this,
-					    $loader = $(that.defaults.loaderWrap),
-					    $pagination = $(that.defaults.pagination);
+						$loader = $(that.defaults.loaderWrap),
+						$pagination = $(that.defaults.pagination);
 					$document.on('mouseenter', this.defaults.loaderWrap, function () {
 						var $this = $(this);
 						$(that.defaults.bar).removeClass('off-animation');
@@ -5490,10 +5497,10 @@ function onYouTubeIframeAPIReady() {
 				},
 				setStartPage: function setStartPage(duration) {
 					var that = this,
-					    $loader = $(that.defaults.loaderWrap),
-					    $pagination = $(that.defaults.pagination),
-					    page = $loader.attr('data-page'),
-					    paginationLeftPos = 0;
+						$loader = $(that.defaults.loaderWrap),
+						$pagination = $(that.defaults.pagination),
+						page = $loader.attr('data-page'),
+						paginationLeftPos = 0;
 					$pagination.find('li').each(function () {
 						if (page == $(this).text()) {
 							paginationLeftPos = $(this).prop('offsetLeft');
@@ -5506,8 +5513,8 @@ function onYouTubeIframeAPIReady() {
 					var $circle = $(this.defaults.bar, $wrap);
 					$circle.each(function () {
 						var $this = $(this),
-						    r = parseInt($this.attr('r'), 10),
-						    l = Math.PI * (r * 2);
+							r = parseInt($this.attr('r'), 10),
+							l = Math.PI * (r * 2);
 						val < 0 ? val = 0 : val > 100 ? val = 100 : false;
 						var str = (100 - val) / 100 * l;
 						$this.css({ strokeDashoffset: str });
@@ -5532,7 +5539,7 @@ function onYouTubeIframeAPIReady() {
 		checkBoxes: function checkBoxes(link) {
 			$document.on('click', link, function (e) {
 				var $this = $(this),
-				    $list = $this.closest('.category-list');
+					$list = $this.closest('.category-list');
 				$list.find('.active').removeClass('active');
 				$this.closest('li').addClass('active');
 			});
@@ -5554,9 +5561,9 @@ function onYouTubeIframeAPIReady() {
 		sortOptions: function sortOptions(obj) {
 			$(obj).each(function () {
 				var $sizeList = $(this),
-				    defaultSort = ["xs", "s", "m", "l", "xl", "36", "38", "40", "42"],
-				    sortData = $sizeList.data('sort') ? $sizeList.data('sort') : defaultSort,
-				    unsortedArray = [];
+					defaultSort = ["xs", "s", "m", "l", "xl", "36", "38", "40", "42"],
+					sortData = $sizeList.data('sort') ? $sizeList.data('sort') : defaultSort,
+					unsortedArray = [];
 
 				function intersect(a, b) {
 					var t = void 0;
@@ -5629,7 +5636,7 @@ function onYouTubeIframeAPIReady() {
 		},
 		blockCollapse: function blockCollapse(el) {
 			var collapsed = el,
-			    slidespeed = 250;
+				slidespeed = 250;
 			$('.sidebar-block_content', collapsed).each(function () {
 				if ($(this).parent().is('.open')) {
 					$(this).slideDown(0);
@@ -5638,7 +5645,7 @@ function onYouTubeIframeAPIReady() {
 			$('.sidebar-block_title', collapsed).on('click.blockCollapse', function (e) {
 				e.preventDefault;
 				var $this = $(this),
-				    $thiscontent = $this.next('.sidebar-block_content');
+					$thiscontent = $this.next('.sidebar-block_content');
 				if ($this.parent().is('.open')) {
 					$this.parent().removeClass('open');
 					$thiscontent.slideUp(slidespeed);
@@ -5654,7 +5661,7 @@ function onYouTubeIframeAPIReady() {
 				e.preventDefault;
 				e.stopPropagation();
 				var $this = $(this),
-				    $thiscontent = $this.next('ul');
+					$thiscontent = $this.next('ul');
 				if ($this.parent().find('a').is('.open')) {
 					$this.parent().find('a').removeClass('open');
 					$thiscontent.slideUp(slidespeed);
@@ -5685,12 +5692,12 @@ function onYouTubeIframeAPIReady() {
 					},
 					setShift: function setShift(delay) {
 						var that = this,
-						    left = $(that.options.mobileFilter).hasClass('filter-col--opened') ? $(that.options.mobileFilter).offset().left : $(that.options.grid).offset().left;
+							left = $(that.options.mobileFilter).hasClass('filter-col--opened') ? $(that.options.mobileFilter).offset().left : $(that.options.grid).offset().left;
 						$(that.options.mobileFilter).css({ 'left': -left + 'px' });
 						if (isMobile) {
 							$('.js-filter-toggle').css({ 'margin-left': '', 'margin-right': '' });
 							$('.footer-sticky').css({ 'bottom': $('.js-filter-toggle').outerHeight() });
-						} 
+						}
 						setTimeout(function () {
 							$(that.options.mobileFilter).addClass('filter-col--init');
 						}, delay);
@@ -5703,7 +5710,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_handlers: function _handlers() {
 						var $mobileFilter = $(this.options.mobileFilter),
-						    toggleButton = this.options.toggleButton;
+							toggleButton = this.options.toggleButton;
 						$document.on('click', toggleButton, function (e) {
 							var $this = $(this);
 							if (!$body.hasClass('is-filters-opened')) {
@@ -5765,8 +5772,8 @@ function onYouTubeIframeAPIReady() {
 					},
 					setShift: function setShift(delay) {
 						var that = this,
-						    $button = $(that.options.toggleFilter),
-						    left = $(that.options.grid).offset().left;
+							$button = $(that.options.toggleFilter),
+							left = $(that.options.grid).offset().left;
 						if (isMobile) {
 							$button.css({ 'margin-left': '' });
 							$('.footer-sticky').css({ 'bottom': $button.outerHeight() });
@@ -5780,7 +5787,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_handlers: function _handlers() {
 						var $mobileFilter = $(this.options.mobileFilter),
-						    toggleButton = this.options.toggleButton;
+							toggleButton = this.options.toggleButton;
 						$document.on('click', toggleButton, function (e) {
 							var $this = $(this);
 							if (!$body.hasClass('is-filters-opened')) {
@@ -5832,12 +5839,12 @@ function onYouTubeIframeAPIReady() {
 
 		viewMode: function viewMode(viewmode) {
 			var $grid = $('.js-gridview', $(viewmode)),
-			    $list = $('.js-listview', $(viewmode)),
-			    $horGrid = $('.js-horview', $(viewmode)),
-			    $products = $('.js-category-grid'),
-			    listingClass = 'prd-listview',
-			    horizontalClass = 'prd-horgrid',
-			    gridClass = 'prd-grid';
+				$list = $('.js-listview', $(viewmode)),
+				$horGrid = $('.js-horview', $(viewmode)),
+				$products = $('.js-category-grid'),
+				listingClass = 'prd-listview',
+				horizontalClass = 'prd-horgrid',
+				gridClass = 'prd-grid';
 			if ($products.hasClass(listingClass)) {
 				$list.addClass('active');
 			} else if ($products.hasClass(gridClass)) {
@@ -6021,8 +6028,8 @@ function onYouTubeIframeAPIReady() {
 		},
 		showRecoverPasswordForm: function showRecoverPasswordForm() {
 			var $link = $('.js-toggle-forms'),
-			    $form1 = $('#loginForm'),
-			    $form2 = $('#recoverPasswordForm');
+				$form1 = $('#loginForm'),
+				$form2 = $('#recoverPasswordForm');
 			$link.on('click', function (e) {
 				$form1.toggleClass('d-none');
 				$form2.toggleClass('d-none');
@@ -6031,7 +6038,7 @@ function onYouTubeIframeAPIReady() {
 		},
 		showForm: function showForm() {
 			var $linkShow = $('.js-show-form'),
-			    $linkClose = $('.js-close-form');
+				$linkClose = $('.js-close-form');
 			$linkShow.on('click', function (e) {
 				$($(this).data('form')).removeClass('d-none');
 				e.preventDefault();
@@ -6059,13 +6066,13 @@ function onYouTubeIframeAPIReady() {
 		productTabs: function productTabs() {
 			$('.js-circle-loader').on('click', function (e) {
 				var $this = $(this),
-				    $container = $this.closest('.holder').find('.prd-grid');
+					$container = $this.closest('.holder').find('.prd-grid');
 				if ($this.data('loaded') == $this.data('total')) return false;
 				$.getJSON($this.attr('href'), function (data) {
 					var html = '',
-					    i = 0,
-					    max = Math.min(parseInt($this.data('total'), 10), $this.data('load') + $this.data('loaded')) - 1,
-					    min = parseInt($this.data('loaded'), 10) - 1;
+						i = 0,
+						max = Math.min(parseInt($this.data('total'), 10), $this.data('load') + $this.data('loaded')) - 1,
+						min = parseInt($this.data('loaded'), 10) - 1;
 					$.each(data, function (key, val) {
 						if (i > min && i <= max) {
 							html += val.product;
@@ -6084,7 +6091,7 @@ function onYouTubeIframeAPIReady() {
 					$('.js-circle-loader-end', $this).html($this.data('total'));
 
 					var start = $this.data('loaded') * 100 / $this.data('total'),
-					    to = ($this.data('loaded') + $this.data('load')) * 100 / $this.data('total');
+						to = ($this.data('loaded') + $this.data('load')) * 100 / $this.data('total');
 					$this.attr('data-start', start);
 					$this.attr('data-to', to);
 					THEME.setPersentCircle ? THEME.setPersentCircle.reinit() : false;
@@ -6093,7 +6100,7 @@ function onYouTubeIframeAPIReady() {
 			});
 			$('[data-grid-tab-title]').on('click', function (e) {
 				var $this = $(this),
-				    $container = $this.closest('.holder').find('.prd-grid');
+					$container = $this.closest('.holder').find('.prd-grid');
 				if ($this.parent().hasClass('active')) return false;
 				THEME.loaderHorizontalSm ? THEME.loaderHorizontalSm.open() : false;
 				THEME.loaderTab ? THEME.loaderTab.open('productsGrid01') : false;
@@ -6104,8 +6111,8 @@ function onYouTubeIframeAPIReady() {
 				$this.parent().addClass('active');
 
 				var $loader = $this.closest('.holder').find('.js-circle-loader'),
-				    start = $this.data('loaded') * 100 / $this.data('total'),
-				    to = ($this.data('loaded') + $('.js-circle-loader').data('load')) * 100 / $this.data('total');
+					start = $this.data('loaded') * 100 / $this.data('total'),
+					to = ($this.data('loaded') + $('.js-circle-loader').data('load')) * 100 / $this.data('total');
 				$loader.attr('href', $this.attr('href'));
 				$loader.attr('data-start', start);
 				$loader.attr('data-to', to);
@@ -6118,8 +6125,8 @@ function onYouTubeIframeAPIReady() {
 
 				$.getJSON($this.attr('href'), function (data) {
 					var html = '',
-					    i = 0,
-					    max = parseInt($this.data('loaded'), 10);
+						i = 0,
+						max = parseInt($this.data('loaded'), 10);
 					$.each(data, function (key, val) {
 						if (i < max) {
 							html += val.product;
@@ -6158,7 +6165,7 @@ function onYouTubeIframeAPIReady() {
 			function counting() {
 				$(obj).each(function () {
 					var $this = $(this),
-					    countTo = $this.attr('data-count');
+						countTo = $this.attr('data-count');
 					$({
 						countNum: $this.text()
 					}).animate({
@@ -6188,7 +6195,7 @@ function onYouTubeIframeAPIReady() {
 			$(table).perfectScrollbar();
 			$(document).on('click', '.js-delete-from-compare', function (e) {
 				var $this = $(e.target),
-				    i = $this.closest('.compare-table-cell').index() + 1;
+					i = $this.closest('.compare-table-cell').index() + 1;
 				$('.compare-table-row').find('.compare-table-cell:nth-child(' + i + ')').remove();
 				$this.closest('.compare-table-cell').remove();
 				if ($('.compare-table-head-row').children().length < 2) {
@@ -6217,15 +6224,15 @@ function onYouTubeIframeAPIReady() {
 		},
 		creativeSlider: function creativeSlider(el) {
 			var $slider = $(el),
-			    $sliderWrap = $('.creative-product-carousel-wrap'),
-			    tabs = '.js-creative-product-carousel-tabs';
+				$sliderWrap = $('.creative-product-carousel-wrap'),
+				tabs = '.js-creative-product-carousel-tabs';
 
 			function doAnimations(elements, type, delay) {
 				var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 				elements.each(function (i) {
 					var $this = $(this),
-					    $animationDelay = i * 200 + delay,
-					    $animationType = type;
+						$animationDelay = i * 200 + delay,
+						$animationType = type;
 					$this.css({
 						'animation-delay': $animationDelay + 'ms',
 						'-webkit-animation-delay': $animationDelay + 'ms'
@@ -6240,8 +6247,8 @@ function onYouTubeIframeAPIReady() {
 				var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 				elements.each(function (i) {
 					var $this = $(this),
-					    $animationDelay = i * 200 + delay,
-					    $animationType = type;
+						$animationDelay = i * 200 + delay,
+						$animationType = type;
 					$this.css({
 						'animation-delay': $animationDelay + 'ms',
 						'-webkit-animation-delay': $animationDelay + 'ms'
@@ -6272,7 +6279,7 @@ function onYouTubeIframeAPIReady() {
 			$slider.on('afterChange', function (e, slick) {
 				slick = $(slick.$slider);
 				var $currentSlide = slick.find('.slick-current'),
-				    index = parseInt($currentSlide.attr('data-slick-index'), 10) + 1;
+					index = parseInt($currentSlide.attr('data-slick-index'), 10) + 1;
 				doAnimations($currentSlide.find('.col:not(.prd-single-col)'), 'fadeInRight', 200);
 				doAnimations($currentSlide.find('.js-creative-image'), 'driveInLeft', 200);
 				doAnimations($currentSlide.find('.js-creative-info'), 'fadeIn', 200);
@@ -6313,7 +6320,7 @@ function onYouTubeIframeAPIReady() {
 				// for ajax loading
 				$slider.next(tabs).find('.js-collection-grid-nav').on('click', function (e) {
 					var $this = $(this),
-					    $slide = $slider.find('[data-slick-index=' + $this.index() + ']');
+						$slide = $slider.find('[data-slick-index=' + $this.index() + ']');
 					var url = document.location.origin + $this.find('a').attr('href');
 					if ($this.hasClass('disable')) return false;
 					$this.siblings().removeClass('active').end().addClass('active');
@@ -6341,7 +6348,7 @@ function onYouTubeIframeAPIReady() {
 			if ($('.data-slick').length) {
 				$('.data-slick').each(function () {
 					var $this = $(this),
-					    arrowsplace = $this.parent().find('.carousel-arrows').length ? $this.parent().find('.carousel-arrows') : $this;
+						arrowsplace = $this.parent().find('.carousel-arrows').length ? $this.parent().find('.carousel-arrows') : $this;
 					if ($this.hasClass('slick-initialized')) return false;
 					$this.on('init', function () {
 						$this.find('.slick-arrow').css({ 'opacity': 0 });
@@ -6534,11 +6541,11 @@ function onYouTubeIframeAPIReady() {
 					var $this = $(this);
 					if ($this.hasClass('slick-initialized')) return false;
 					var arrowsplace = $this.parent().find('.carousel-arrows').length ? $this.parent().find('.carousel-arrows') : $this,
-					    slidesToShow_lg = 5,
-					    slidesToScroll_lg = 1,
-					    slidesToShow_md = 4,
-					    slidesToScroll_md = 1,
-					    slickTimer = void 0;
+						slidesToShow_lg = 5,
+						slidesToScroll_lg = 1,
+						slidesToShow_md = 4,
+						slidesToScroll_md = 1,
+						slickTimer = void 0;
 					if ($this.closest('.aside ').length) {
 						slidesToShow_lg = 4;
 						slidesToScroll_lg = 1;
@@ -6726,7 +6733,7 @@ function onYouTubeIframeAPIReady() {
 					}
 					$(this.defaults.carousel).each(function () {
 						var $this = $(this),
-						    arrowsplace = void 0;
+							arrowsplace = void 0;
 						if ($this.parent().find('.carousel-arrows').length) {
 							arrowsplace = $this.parent().find('.carousel-arrows');
 						} else if ($this.closest('.holder').find('.carousel-arrows').length) {
@@ -6741,11 +6748,11 @@ function onYouTubeIframeAPIReady() {
 							THEME.product.productWidth('.prd', $this);
 						});
 						var slidesToShow = 4,
-						    slidesToShowLG = 4,
-						    slidesToShowMD = 3,
-						    slidesToShowSM = 2,
-						    slidesToShowXS = 2,
-						    speed = 500;
+							slidesToShowLG = 4,
+							slidesToShowMD = 3,
+							slidesToShowSM = 2,
+							slidesToShowXS = 2,
+							speed = 500;
 						if ($this.hasClass('data-to-show-6')) {
 							slidesToShow = 6;
 							speed = 300;
@@ -6861,7 +6868,7 @@ function onYouTubeIframeAPIReady() {
 					}
 					$(this.defaults.carousel).each(function () {
 						var $this = $(this),
-						    arrowsplace = void 0;
+							arrowsplace = void 0;
 						if ($this.parent().find('.carousel-arrows').length) {
 							arrowsplace = $this.parent().find('.carousel-arrows');
 						} else if ($this.closest('.holder').find('.carousel-arrows').length) {
@@ -6876,11 +6883,11 @@ function onYouTubeIframeAPIReady() {
 							THEME.product.productWidth('.prd', $this);
 						});
 						var slidesToShow = 4,
-						    slidesToShowLG = 4,
-						    slidesToShowMD = 3,
-						    slidesToShowSM = 2,
-						    slidesToShowXS = 2,
-						    speed = 500;
+							slidesToShowLG = 4,
+							slidesToShowMD = 3,
+							slidesToShowSM = 2,
+							slidesToShowXS = 2,
+							speed = 500;
 						if ($this.hasClass('data-to-show-6')) {
 							slidesToShow = 6;
 							speed = 300;
@@ -7002,7 +7009,7 @@ function onYouTubeIframeAPIReady() {
 						var that = this;
 						$(that.defaults.gallery).each(function () {
 							var $gallery = $(this),
-							    $filtersList = $(that.defaults.filtersList, $gallery.closest('.holder'));
+								$filtersList = $(that.defaults.filtersList, $gallery.closest('.holder'));
 							if ($filtersList.length) {
 								if (w >= maxSM) {
 									if ($gallery.data('isotope')) {
@@ -7018,7 +7025,7 @@ function onYouTubeIframeAPIReady() {
 						var that = this;
 						$(that.defaults.gallery).each(function () {
 							var $gallery = $(this),
-							    $filtersList = $(that.defaults.filtersList, $gallery.closest('.holder'));
+								$filtersList = $(that.defaults.filtersList, $gallery.closest('.holder'));
 							if ($filtersList.length) {
 								if (w >= maxSM) {
 									if ($gallery.data('isotope')) {
@@ -7033,9 +7040,9 @@ function onYouTubeIframeAPIReady() {
 					},
 					_galleryInit: function _galleryInit(gallery) {
 						var $gallery = gallery,
-						    that = this,
-						    $filtersList = $(that.defaults.filtersList, $gallery.closest('.holder')),
-						    ltr = $body.is('.rtl') ? false : true;
+							that = this,
+							$filtersList = $(that.defaults.filtersList, $gallery.closest('.holder')),
+							ltr = $body.is('.rtl') ? false : true;
 						if ($filtersList.length) {
 							$gallery.imagesLoaded(function () {
 								$gallery.isotope({
@@ -7055,16 +7062,16 @@ function onYouTubeIframeAPIReady() {
 					},
 					_filters: function _filters(obj) {
 						var activeStart = void 0,
-						    $gallery = $(obj.defaults.gallery),
-						    $filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder')),
-						    $filtersLabel = $(obj.defaults.filtersList + ' ' + obj.defaults.filtersLabel),
-						    activeClass = obj.defaults.activeClass,
-						    dataAttr = obj.defaults.dataAttr;
+							$gallery = $(obj.defaults.gallery),
+							$filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder')),
+							$filtersLabel = $(obj.defaults.filtersList + ' ' + obj.defaults.filtersLabel),
+							activeClass = obj.defaults.activeClass,
+							dataAttr = obj.defaults.dataAttr;
 						$filtersLabel.each(function () {
 							var $this = $(this),
-							    $gallery = $(obj.defaults.gallery, $this.closest('.holder'));
+								$gallery = $(obj.defaults.gallery, $this.closest('.holder'));
 							var filtered = $this.attr(dataAttr),
-							    count = filtered == null ? $gallery.find(obj.defaults.galleryItem).length : $gallery.find(filtered).length;
+								count = filtered == null ? $gallery.find(obj.defaults.galleryItem).length : $gallery.find(filtered).length;
 							$this.find(obj.defaults.filtersCount).html(count);
 							if ($this.hasClass(activeClass)) {
 								activeStart = true;
@@ -7076,7 +7083,7 @@ function onYouTubeIframeAPIReady() {
 						$filtersLabel.on('click', function (e) {
 							e.preventDefault();
 							var $this = $(this),
-							    $gallery = $(obj.defaults.gallery, $this.closest('.holder'));
+								$gallery = $(obj.defaults.gallery, $this.closest('.holder'));
 							if ($this.hasClass(activeClass)) {
 								return false;
 							} else {
@@ -7108,7 +7115,7 @@ function onYouTubeIframeAPIReady() {
 					init: function init(options) {
 						$.extend(this.defaults, options);
 						var $gallery = $(this.defaults.gallery),
-						    $filtersList = $(this.defaults.filtersList, $gallery.closest('.holder'));
+							$filtersList = $(this.defaults.filtersList, $gallery.closest('.holder'));
 						if ($filtersList.length) {
 							$.extend(this.defaults, options);
 							if (!$(this.defaults.gallery).data('isotope')) {
@@ -7118,7 +7125,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					reinit: function reinit() {
 						var $gallery = $(this.defaults.gallery),
-						    $filtersList = $(this.defaults.filtersList, $gallery.closest('.holder'));
+							$filtersList = $(this.defaults.filtersList, $gallery.closest('.holder'));
 						if ($filtersList.length) {
 							if (!$(this.defaults.gallery).data('isotope')) {
 								this._galleryInit(this);
@@ -7133,7 +7140,7 @@ function onYouTubeIframeAPIReady() {
 					},
 					_galleryInit: function _galleryInit(obj) {
 						var $gallery = $(obj.defaults.gallery),
-						    $filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder'));
+							$filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder'));
 						if ($filtersList.length) {
 							var ltr = $body.is('.rtl') ? false : true;
 							$gallery.imagesLoaded(function () {
@@ -7154,16 +7161,16 @@ function onYouTubeIframeAPIReady() {
 					},
 					_filters: function _filters(obj) {
 						var activeStart = void 0,
-						    $gallery = $(obj.defaults.gallery),
-						    $filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder')),
-						    $filtersLabel = $(obj.defaults.filtersList + ' ' + obj.defaults.filtersLabel),
-						    activeClass = obj.defaults.activeClass,
-						    dataAttr = obj.defaults.dataAttr;
+							$gallery = $(obj.defaults.gallery),
+							$filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder')),
+							$filtersLabel = $(obj.defaults.filtersList + ' ' + obj.defaults.filtersLabel),
+							activeClass = obj.defaults.activeClass,
+							dataAttr = obj.defaults.dataAttr;
 						$filtersLabel.each(function () {
 							var $this = $(this),
-							    $gallery = $(obj.defaults.gallery, $this.closest('.holder'));
+								$gallery = $(obj.defaults.gallery, $this.closest('.holder'));
 							var filtered = $this.attr(dataAttr),
-							    count = filtered == null ? $gallery.find(obj.defaults.galleryItem).length : $gallery.find(filtered).length;
+								count = filtered == null ? $gallery.find(obj.defaults.galleryItem).length : $gallery.find(filtered).length;
 							$this.find(obj.defaults.filtersCount).html(count);
 							if ($this.hasClass(activeClass)) {
 								activeStart = true;
@@ -7175,7 +7182,7 @@ function onYouTubeIframeAPIReady() {
 						$filtersLabel.on('click', function (e) {
 							e.preventDefault();
 							var $this = $(this),
-							    $gallery = $(obj.defaults.gallery, $this.closest('.holder'));
+								$gallery = $(obj.defaults.gallery, $this.closest('.holder'));
 							if ($this.hasClass(activeClass)) {
 								return false;
 							} else {
@@ -7249,15 +7256,15 @@ function onYouTubeIframeAPIReady() {
 					},
 					_filters: function _filters(obj) {
 						var activeStart = void 0,
-						    $gallery = $(obj.defaults.gallery),
-						    $filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder')),
-						    $filtersLabel = $(obj.defaults.filtersList + ' ' + obj.defaults.filtersLabel),
-						    activeClass = obj.defaults.activeClass,
-						    dataAttr = obj.defaults.dataAttr;
+							$gallery = $(obj.defaults.gallery),
+							$filtersList = $(obj.defaults.filtersList, $gallery.closest('.holder')),
+							$filtersLabel = $(obj.defaults.filtersList + ' ' + obj.defaults.filtersLabel),
+							activeClass = obj.defaults.activeClass,
+							dataAttr = obj.defaults.dataAttr;
 						$filtersLabel.each(function () {
 							var $this = $(this);
 							var filtered = $this.attr(dataAttr),
-							    count = filtered == null ? $gallery.find(obj.defaults.galleryItem).length : $gallery.find(filtered).length;
+								count = filtered == null ? $gallery.find(obj.defaults.galleryItem).length : $gallery.find(filtered).length;
 							$this.find(obj.defaults.filtersCount).html(count);
 							if ($this.hasClass(activeClass)) {
 								activeStart = true;
@@ -7269,7 +7276,7 @@ function onYouTubeIframeAPIReady() {
 						$filtersLabel.on('click', function (e) {
 							e.preventDefault();
 							var $this = $(this);
-							if ($this.hasClass(activeClass)) return false;else {
+							if ($this.hasClass(activeClass)) return false; else {
 								$filtersLabel.removeClass(activeClass);
 								$this.addClass(activeClass);
 							}
@@ -7350,8 +7357,8 @@ function onYouTubeIframeAPIReady() {
 					}
 					$(that.defaults.tab, $(that.defaults.carousel).closest('.holder')).on('click', function (e) {
 						var $this = $(this),
-						    $carousel = $('#' + $this.parent().attr('data-grid')),
-						    filtername = $this.attr('data-filter');
+							$carousel = $('#' + $this.parent().attr('data-grid')),
+							filtername = $this.attr('data-filter');
 						$this.siblings().removeClass('active');
 						$this.addClass('active');
 						$carousel.slick('slickUnfilter');
@@ -7365,10 +7372,10 @@ function onYouTubeIframeAPIReady() {
 		instaFeed: function instaFeed(el) {
 			$(el).each(function () {
 				var $el = $(this),
-				    tag = $el.data('tag'),
-				    token = $el.data('token'),
-				    limit = $el.data('limit'),
-				    id = $el.attr('id');
+					tag = $el.data('tag'),
+					token = $el.data('token'),
+					limit = $el.data('limit'),
+					id = $el.attr('id');
 
 				var userFeed = new Instafeed({
 					get: 'user',
@@ -7549,23 +7556,23 @@ function onYouTubeIframeAPIReady() {
 		}
 	};
 	var $body = $('body'),
-	    $window = $(window),
-	    $document = $(document),
-	    w = window.innerWidth || $window.width(),
-	    h = window.innerHeight || $window.height(),
-	    resizeTimer = void 0,
-	    scrollWidth = calcScrollWidth(),
-	    promoToplineHeight = 0,
-	    swipemode = false,
-	    maxXS = 480,
-	    maxSM = 768,
-	    maxMD = 992,
-	    maxLG = 1200,
-	    mobileMenuBreikpoint = 1025,
-	    productPreviewHorBreikpoint = 1025,
-	    isMobile = w < mobileMenuBreikpoint,
-	    productPage = $body.hasClass('template-product'),
-	    catalogPage = $body.hasClass('template-collection');
+		$window = $(window),
+		$document = $(document),
+		w = window.innerWidth || $window.width(),
+		h = window.innerHeight || $window.height(),
+		resizeTimer = void 0,
+		scrollWidth = calcScrollWidth(),
+		promoToplineHeight = 0,
+		swipemode = false,
+		maxXS = 480,
+		maxSM = 768,
+		maxMD = 992,
+		maxLG = 1200,
+		mobileMenuBreikpoint = 1025,
+		productPreviewHorBreikpoint = 1025,
+		isMobile = w < mobileMenuBreikpoint,
+		productPage = $body.hasClass('template-product'),
+		catalogPage = $body.hasClass('template-collection');
 	setVH();
 	THEME.beforeReady.init();
 	THEME.documentReady.init();
