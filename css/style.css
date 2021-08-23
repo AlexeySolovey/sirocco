@@ -43965,3 +43965,9 @@ right: 2%;
         padding: 0 10px;
     }
 }
+
+@media (max-width: 1024px){
+    .btn-none {
+        display: none;
+    }
+}
