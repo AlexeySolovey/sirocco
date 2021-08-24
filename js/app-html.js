@@ -4507,6 +4507,14 @@ function onYouTubeIframeAPIReady() {
 							adaptiveHeight: true,
 							responsive: [
 								{
+									breakpoint: 1990,
+									settings: {
+										slidesToShow: 2,
+										infinite: true,
+										dots: true,
+									},
+								},
+								{
 									breakpoint: 991,
 									settings: {
 										slidesToShow: 1,
