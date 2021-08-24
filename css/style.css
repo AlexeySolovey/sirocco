@@ -25368,7 +25368,7 @@ ul.category-list-lg li.active a
     overflow: hidden;
 
     margin: -10px 0 10px;
-    padding: 10px;
+    padding: 10px 0;
 
     color: #282828;
     background: #fff;
@@ -43840,6 +43840,12 @@ right: 2%;
     background-color: #fff;
 }
 
+@media (max-width:1024px){
+    .complete-items{
+        padding: 0;
+    }
+}
+
 @media (min-width:768px) and (max-width:1024px){
 
     .complete-block{
@@ -43976,9 +43982,6 @@ right: 2%;
     display: flex;
     justify-content: space-between;
 }
-/* .filter-row_row span {
-    justify-content: flex-start;
-} */
 .filter-row_row-column {
     display: flex;
     align-items: center;
