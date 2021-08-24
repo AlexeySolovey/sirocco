@@ -18002,14 +18002,14 @@ body:not(.has-sticky) .bnr-sticky
         -ms-flex: 0 0 calc(19.9% - 30px);
             flex: 0 0 calc(19.9% - 30px);
     }
-    .is-filters-opened:not(.has-horizontal-filter) .prd-grid.product-listing.data-to-show-5 .prd,
+    /* .is-filters-opened:not(.has-horizontal-filter) .prd-grid.product-listing.data-to-show-5 .prd,
     .filter-col--opened-desktop ~ .aside .prd-grid.product-listing.data-to-show-5 .prd
     {
         max-width: calc(24.9% - 30px); 
 
         -ms-flex: 0 0 calc(24.9% - 30px);
             flex: 0 0 calc(24.9% - 30px);
-    }
+    } */
     .is-filters-opened:not(.has-horizontal-filter) .prd-grid.product-listing.data-to-show-4 .prd,
     .filter-col--opened-desktop ~ .aside .prd-grid.product-listing.data-to-show-4 .prd
     {
@@ -18054,14 +18054,14 @@ body:not(.has-sticky) .bnr-sticky
         -ms-flex: 0 0 calc(19.9% - 30px);
             flex: 0 0 calc(19.9% - 30px);
     }
-    .is-filters-opened:not(.has-horizontal-filter) .prd-grid.product-listing.data-to-show-5 .prd,
+    /* .is-filters-opened:not(.has-horizontal-filter) .prd-grid.product-listing.data-to-show-5 .prd,
     .filter-col--opened-desktop ~ .aside .prd-grid.product-listing.data-to-show-5 .prd
     {
         max-width: calc(24.9% - 30px); 
 
         -ms-flex: 0 0 calc(24.9% - 30px);
             flex: 0 0 calc(24.9% - 30px);
-    }
+    } */
     .is-filters-opened:not(.has-horizontal-filter) .prd-grid.product-listing.data-to-show-4 .prd,
     .filter-col--opened-desktop ~ .aside .prd-grid.product-listing.data-to-show-4 .prd
     {
@@ -43836,7 +43836,7 @@ right: 2%;
     position: absolute;
     width: 100%;
     top: 51%;
-    padding: 5px 10px;
+    padding: 20px;
     background-color: #fff;
 }
 
@@ -43970,4 +43970,22 @@ right: 2%;
     .btn-none {
         display: none;
     }
+}
+
+.filter-row {
+    display: flex;
+    justify-content: space-between;
+}
+/* .filter-row_row span {
+    justify-content: flex-start;
+} */
+.filter-row_row-column {
+    display: flex;
+    align-items: center;
+}
+.filter-row_row-column > * {
+    margin: 0 10px;
+}
+.filter-row_row-column span {
+    margin: 0;
 }
