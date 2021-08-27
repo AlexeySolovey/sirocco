@@ -1026,10 +1026,8 @@ body.mac .custom-grid:after
 
 /*our styles*/
 #slider-2 .slick-slide img{
-    max-height: 250px;
+    height: 220px;
 }
-
-
 
 /*holder*/
 .holder,
