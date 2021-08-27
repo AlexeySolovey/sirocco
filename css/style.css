@@ -1026,7 +1026,7 @@ body.mac .custom-grid:after
 
 /*our styles*/
 #slider-2 .slick-slide img{
-    height: 220px;
+    height: auto;
 }
 
 /*holder*/
@@ -44020,9 +44020,4 @@ right: 2%;
 .container-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-@media (min-width: 800px) and (max-width: 2560px) {}
-    #slider-2 .slick-slide img {
-        height: auto;
 }
