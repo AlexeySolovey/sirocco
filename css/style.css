@@ -44021,3 +44021,8 @@ right: 2%;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+@media (min-width: 800px) and (max-width: 2560px) {}
+    #slider-2 .slick-slide img {
+        height: auto;
+}
